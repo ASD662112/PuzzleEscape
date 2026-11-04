@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>PuzzleEscape · 第一人称室内解谜逃脱</title>
+<meta name="description" content="PuzzleEscape 是一款第一人称室内解谜逃脱游戏：在封闭的旧宅与疗养院中搜集线索、躲避怪物，找到出路。" />
+<style>
+  :root {
+    --bg: #07080a;
+    --bg-soft: #0c0e11;
+    --line: rgba(255, 255, 255, 0.08);
+    --line-strong: rgba(255, 255, 255, 0.16);
+    --text: #eef1f3;
+    --muted: #8b939c;
+    --accent: #8be9c6;
+    --accent-dim: rgba(139, 233, 198, 0.12);
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  ::selection { background: var(--accent); color: #05110d; }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* 背景氛围 */
+  .ambient {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background:
+      radial-gradient(900px 600px at 15% -10%, rgba(139, 233, 198, 0.10), transparent 62%),
+      radial-gradient(700px 520px at 92% 8%, rgba(96, 132, 255, 0.08), transparent 65%),
+      radial-gradient(1000px 700px at 50% 110%, rgba(139, 233, 198, 0.05), transparent 60%);
+  }
+
+  .grain {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.22;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+  }
+
+  .page {
+    position: relative;
+    z-index: 2;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 32px 72px;
+  }
+
+  /* 顶部导航 */
+  .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0 0;
+  }
+
+  .brand {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    font-size: 15px;
+    letter-spacing: 0.34em;
+    font-weight: 600;
+  }
+
+  .brand span { color: var(--accent); }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .pill {
+    padding: 4px 10px;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--text);
+  }
+
+  .nav-right a:hover { color: var(--text); }
+
+  /* Hero */
+  .hero { padding: 96px 0 88px; }
+
+  .eyebrow {
+    margin: 0 0 22px;
+    font-size: 13px;
+    letter-spacing: 0.22em;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(42px, 6.6vw, 76px);
+    line-height: 1.14;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: transparent;
+    background: linear-gradient(100deg, #ffffff 8%, var(--accent) 92%);
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  .lede {
+    margin: 30px 0 0;
+    max-width: 620px;
+    font-size: 16px;
+    line-height: 1.9;
+    color: #a6aeb7;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 44px;
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 26px;
+    border: 1px solid var(--line-strong);
+    border-radius: 10px;
+    font-size: 15px;
+    color: var(--text);
+    background: rgba(255, 255, 255, 0.02);
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  }
+
+  .btn svg { width: 18px; height: 18px; fill: currentColor; opacity: 0.9; }
+
+  .btn span {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+  }
+
+  .btn:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+    background: var(--accent-dim);
+  }
+
+  .btn.primary {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: #04130e;
+    font-weight: 600;
+  }
+
+  .btn.primary span { color: rgba(4, 19, 14, 0.62); }
+
+  .btn.primary:hover {
+    background: #a2f2d4;
+    border-color: #a2f2d4;
+  }
+
+  .btn:focus-visible,
+  a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+
+  .hint {
+    margin: 22px 0 0;
+    font-size: 12.5px;
+    line-height: 1.8;
+    color: #5f666e;
+  }
+
+  /* 通用分节 */
+  section { border-top: 1px solid var(--line); }
+
+  .section-inner { padding: 72px 0; }
+
+  .tag {
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 40px;
+    margin-top: 26px;
+  }
+
+  .about-text p {
+    margin: 0 0 18px;
+    font-size: 16px;
+    line-height: 2;
+    color: #b3bac2;
+  }
+
+  .about-text p:last-child { margin-bottom: 0; }
+
+  /* 玩法卡片 */
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 32px;
+  }
+
+  .card {
+    padding: 28px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.028), rgba(255, 255, 255, 0.008));
+    transition: border-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .card:hover {
+    border-color: rgba(139, 233, 198, 0.34);
+    transform: translateY(-3px);
+  }
+
+  .card h3 {
+    margin: 0 0 12px;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  .card p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.9;
+    color: var(--muted);
+  }
+
+  .index {
+    display: block;
+    margin-bottom: 18px;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+  }
+
+  /* 规格 */
+  .specs {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1px;
+    margin-top: 32px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+
+  .spec {
+    padding: 26px 24px;
+    background: var(--bg-soft);
+  }
+
+  .spec dt {
+    margin: 0 0 10px;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+  }
+
+  .spec dd {
+    margin: 0;
+    font-size: 16px;
+    letter-spacing: 0.01em;
+  }
+
+  /* 底栏 */
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 34px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    font-size: 12.5px;
+    color: #5f666e;
+  }
+
+  footer a:hover { color: var(--accent); }
+
+  .foot-links { display: flex; gap: 20px; }
+
+  /* 进场动画 */
+  .reveal {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.in { opacity: 1; transform: none; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .btn, .card { transition: none; }
+  }
+
+  /* 响应式 */
+  @media (max-width: 900px) {
+    .page { padding: 0 22px 56px; }
+    .hero { padding: 72px 0 64px; }
+    .about-grid { grid-template-columns: 1fr; gap: 16px; }
+    .cards { grid-template-columns: 1fr; }
+    .specs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .section-inner { padding: 56px 0; }
+  }
+
+  @media (max-width: 520px) {
+    .nav-right .ghost { display: none; }
+    .actions { flex-direction: column; }
+    .btn { justify-content: space-between; }
+    .specs { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <div class="page">
+    <header class="nav">
+      <a class="brand" href="#top" aria-label="PuzzleEscape 首页">PUZZLE<span>ESCAPE</span></a>
+      <div class="nav-right">
+        <span class="pill">v1.1.0</span>
+        <a class="ghost" href="https://github.com/ASD662112/PuzzleEscape" target="_blank" rel="noreferrer">GitHub ↗</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" style="border-top:0">
+        <p class="eyebrow reveal">第一人称 · 室内解谜 · 潜行逃脱</p>
+        <h1 class="reveal">在黑暗里，<br /><em>别让它听见你。</em></h1>
+        <p class="lede reveal">
+          你在一座封闭的旧宅中醒来。手电筒的光很窄，走廊很长，而黑暗里还有别的东西在走动——
+          它会循声赶来，也会追着你穿过楼层。找到线索，打开那扇门，或者先想办法活下来。
+        </p>
+
+        <div class="actions reveal">
+          <a class="btn primary" href="https://github.com/ASD662112/PuzzleEscape/releases/download/v1.1.0/PuzzleEscape_Setup.exe" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5 10.5 4.4v7.1H3V5.5Zm8.6-1.2L21 3v8.5h-9.4V4.3ZM3 12.5h7.5v7.1L3 18.5v-6Zm8.6 0H21V21l-9.4-1.3v-7.2Z"/></svg>
+            Windows 下载 <span>265 MB · x64</span>
+          </a>
+          <a class="btn" href="https://github.com/ASD662112/PuzzleEscape/releases/download/v1.1.0/PuzzleEscape.apk" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.9 8.4h10.2c.3 0 .5.2.5.5v6.6a1.4 1.4 0 0 1-1.4 1.4v2.6a1 1 0 1 1-2 0v-2.6h-4.4v2.6a1 1 0 1 1-2 0v-2.6A1.4 1.4 0 0 1 6.4 15.5V8.9c0-.3.2-.5.5-.5Zm-2.4.3c.6 0 1 .5 1 1v4.6a1 1 0 1 1-2 0V9.7c0-.6.4-1 1-1Zm16.6 0c.6 0 1 .4 1 1v4.6a1 1 0 1 1-2 0V9.7c0-.6.4-1 1-1ZM9 7.2l-1-1.7a.3.3 0 0 1 .1-.4.3.3 0 0 1 .4.1l1 1.7a6.6 6.6 0 0 1 4.9 0l1-1.7a.3.3 0 0 1 .4-.1c.2.1.2.3.1.4l-1 1.7c1.7.8 2.8 2.2 2.8 3.9H6.2c0-1.7 1.1-3.1 2.8-3.9Zm.3 2.7a.7.7 0 1 0 0-1.4.7.7 0 0 0 0 1.4Zm5.4 0a.7.7 0 1 0 0-1.4.7.7 0 0 0 0 1.4Z"/></svg>
+            Android 下载 <span>140 MB · APK</span>
+          </a>
+        </div>
+
+        <p class="hint reveal">
+          Windows 10 / 11 64 位 · Android 8.0 及以上 · 安装包未签名，若遇 SmartScreen 提示请选择「更多信息 → 仍要运行」
+        </p>
+      </section>
+
+      <section>
+        <div class="section-inner">
+          <p class="tag reveal">关于游戏</p>
+          <div class="about-grid">
+            <div class="tag reveal">PUZZLEESCAPE</div>
+            <div class="about-text reveal">
+              <p>《PuzzleEscape》是一款第一人称室内解谜逃脱游戏。你在一座封闭的旧宅中醒来，只能借手电筒的微光在走廊、病房与地下室之间摸索：翻找抽屉和柜子，收集钥匙、保险丝、通行卡与四枚封印徽记，解开一扇扇锁住的门。</p>
+              <p>黑暗中有东西在走动：它会循声赶来，也会追着你穿过楼层。你可以躲进柜子屏住呼吸，也可以放下蜡烛引开它的注意；还可能因为一次奔跑耗尽体力，被它追上。</p>
+              <p>两张地图、五档难度，从没有怪物的纯粹解谜，到比你还快的恶魔。每一步都在赌：先拿线索，还是先保命。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-inner">
+          <p class="tag reveal">玩法</p>
+          <div class="cards">
+            <article class="card reveal">
+              <span class="index">01 / 探索</span>
+              <h3>翻遍每一格抽屉</h3>
+              <p>钥匙、保险丝、通行卡、旧日记——线索散落在容器与房间深处，随机刷新让每一次开局都不完全相同。</p>
+            </article>
+            <article class="card reveal">
+              <span class="index">02 / 潜行</span>
+              <h3>别让它听见你</h3>
+              <p>奔跑、开门、丢下酒瓶都会发出声音。蹲在暗处、关掉手电、躲进柜子，才有机会从它身边溜过去。</p>
+            </article>
+            <article class="card reveal">
+              <span class="index">03 / 光影</span>
+              <h3>一根蜡烛，六十秒</h3>
+              <p>手电筒与半截蜡烛是唯一的依靠。照亮身边五米，也可以把蜡烛放在地上，当作路标或诱饵。</p>
+            </article>
+            <article class="card reveal">
+              <span class="index">04 / 难度</span>
+              <h3>从和平到恶魔</h3>
+              <p>开局选定本局难度：和平没有怪物；恶魔的追逐速度比你的奔跑还快十分之一，选定后无法更改。</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-inner">
+          <p class="tag reveal">下载信息</p>
+          <dl class="specs reveal">
+            <div class="spec">
+              <dt>版本</dt>
+              <dd>v1.1.0</dd>
+            </div>
+            <div class="spec">
+              <dt>平台</dt>
+              <dd>Windows · Android</dd>
+            </div>
+            <div class="spec">
+              <dt>安装包</dt>
+              <dd>265 MB / 140 MB</dd>
+            </div>
+            <div class="spec">
+              <dt>人数</dt>
+              <dd>单人 · 离线</dd>
+            </div>
+          </dl>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© <span id="year">2026</span> PuzzleEscape · 室内解谜逃脱</span>
+      <div class="foot-links">
+        <a href="https://github.com/ASD662112/PuzzleEscape" target="_blank" rel="noreferrer">源码仓库 ↗</a>
+        <a href="https://github.com/ASD662112/PuzzleEscape/releases" target="_blank" rel="noreferrer">全部版本 ↗</a>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const items = document.querySelectorAll(".reveal:not(.in)");
+
+    if ("IntersectionObserver" in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("in");
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+
+      items.forEach((el) => io.observe(el));
+    } else {
+      items.forEach((el) => el.classList.add("in"));
+    }
+  </script>
+</body>
+</html>
