@@ -9,6 +9,9 @@
 [Mm]emoryCaptures/
 [Rr]ecordings/
 
+# 场景备份（体积大，不进版本库）
+Backups/
+
 # Asset meta data should be versioned, but ignore crash dumps
 sysinfo.txt
 crashlytics-build.properties
