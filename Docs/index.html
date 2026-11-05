@@ -255,6 +255,28 @@
     color: #5f666e;
   }
 
+  /* 镜像下载 */
+  .mirror {
+    margin: 16px 0 0;
+    font-size: 12.5px;
+    line-height: 1.8;
+    color: #5f666e;
+  }
+
+  .mirror a {
+    color: var(--accent);
+    border-bottom: 1px solid rgba(139, 233, 198, 0.32);
+    padding-bottom: 1px;
+    transition: border-color 0.2s ease, color 0.2s ease;
+  }
+
+  .mirror a:hover {
+    color: #a2f2d4;
+    border-bottom-color: #a2f2d4;
+  }
+
+  .mirror .sep { margin: 0 8px; opacity: 0.6; }
+
   /* 通用分节 */
   section { border-top: 1px solid var(--line); }
 
@@ -447,6 +469,13 @@
           </a>
         </div>
 
+        <p class="mirror reveal">
+          <span data-i18n="mirrorHint">GitHub 下载超时？试试镜像：</span>
+          <a href="https://gh-proxy.com/https://github.com/ASD662112/PuzzleEscape/releases/download/v1.1.1/PuzzleEscape_Setup.exe" target="_blank" rel="noreferrer" data-i18n="mirrorWin">Windows 镜像</a>
+          <span class="sep">·</span>
+          <a href="https://gh-proxy.com/https://github.com/ASD662112/PuzzleEscape/releases/download/v1.1.1/PuzzleEscape.apk" target="_blank" rel="noreferrer" data-i18n="mirrorAndroid">Android 镜像</a>
+        </p>
+
         <p class="hint reveal" data-i18n="hint">
           Windows 10 / 11 64 位 · Android 8.0 及以上 · 安装包未签名，若遇 SmartScreen 提示请选择「更多信息 → 仍要运行」
         </p>
@@ -538,6 +567,9 @@
         lede: "你在一座封闭的旧宅中醒来。手电筒的光很窄，走廊很长，而黑暗里还有别的东西在走动——它会循声赶来，也会追着你穿过楼层。找到线索，打开那扇门，或者先想办法活下来。",
         downloadWin: "Windows 下载",
         downloadAndroid: "Android 下载",
+        mirrorHint: "GitHub 下载超时？试试镜像：",
+        mirrorWin: "Windows 镜像",
+        mirrorAndroid: "Android 镜像",
         hint: "Windows 10 / 11 64 位 · Android 8.0 及以上 · 安装包未签名，若遇 SmartScreen 提示请选择「更多信息 → 仍要运行」",
         aboutTag: "关于游戏",
         aboutP1: "《PuzzleEscape》是一款第一人称室内解谜逃脱游戏。你在一座封闭的旧宅中醒来，只能借手电筒的微光在走廊、病房与地下室之间摸索：翻找抽屉和柜子，收集钥匙、保险丝、通行卡与四枚封印徽记，解开一扇扇锁住的门。",
@@ -575,6 +607,9 @@
         lede: "You wake in a sealed old house. The flashlight beam is narrow, the corridors are long, and something else is walking in the dark — it comes when it hears you, and it will chase you across floors. Find the clues, open that door, or just stay alive.",
         downloadWin: "Download for Windows",
         downloadAndroid: "Download for Android",
+        mirrorHint: "Download timing out? Try a mirror:",
+        mirrorWin: "Windows mirror",
+        mirrorAndroid: "Android mirror",
         hint: "Windows 10 / 11 64-bit · Android 8.0+ · The installer is unsigned; if SmartScreen appears, choose 「More info → Run anyway」",
         aboutTag: "About",
         aboutP1: "PuzzleEscape is a first-person indoor escape puzzle game. You wake in a sealed old manor with only a flashlight to guide you through corridors, wards and basements: search drawers and cabinets, collect keys, fuses, access cards and four sealed emblems, and unlock one door after another.",
@@ -612,6 +647,9 @@
         lede: "閉ざされた旧邸宅で目を覚ます。懐中電灯の光は細く、廊下は長い。そして暗闇には別の何かが歩いている——音を立てればやって来て、階を越えて追いかけてくる。手がかりを見つけ、あの扉を開くか、まずは生き延びろ。",
         downloadWin: "Windows 版をダウンロード",
         downloadAndroid: "Android 版をダウンロード",
+        mirrorHint: "ダウンロードがタイムアウトする場合はミラーをご利用ください：",
+        mirrorWin: "Windows ミラー",
+        mirrorAndroid: "Android ミラー",
         hint: "Windows 10 / 11 64ビット · Android 8.0 以上 · インストーラーは未署名です。SmartScreen が出た場合は「詳細情報 → 実行」を選んでください",
         aboutTag: "ゲームについて",
         aboutP1: "『PuzzleEscape』は一人称視点の屋内謎解き脱出ゲームです。閉ざされた旧邸宅で目を覚ましたあなたは、懐中電灯のわずかな光だけを頼りに、廊下・病棟・地下室を手探りで進みます。引き出しや棚を探し、鍵・ヒューズ・通行カード・四つの封印の紋章を集め、鍵のかかった扉を次々と開けていきます。",
@@ -649,6 +687,9 @@
         lede: "폐쇄된 저택에서 깨어납니다. 손전등 불빛은 좁고 복도는 길며, 어둠 속에는 다른 무언가가 걷고 있습니다——소리를 내면 다가오고, 층을 넘어 쫓아옵니다. 단서를 찾아 그 문을 열거나, 우선 살아남으세요.",
         downloadWin: "Windows 다운로드",
         downloadAndroid: "Android 다운로드",
+        mirrorHint: "다운로드가 실패하거나 느리면 미러를 사용하세요:",
+        mirrorWin: "Windows 미러",
+        mirrorAndroid: "Android 미러",
         hint: "Windows 10 / 11 64비트 · Android 8.0 이상 · 설치 파일은 서명되지 않았습니다. SmartScreen이 뜨면 「추가 정보 → 실행」을 선택하세요",
         aboutTag: "게임 소개",
         aboutP1: "『PuzzleEscape』는 1인칭 실내 탈출 퍼즐 게임입니다. 폐쇄된 저택에서 깨어난 당신은 손전등의 희미한 빛만으로 복도, 병동, 지하실을 더듬어 나갑니다. 서랍과 장롱을 뒤져 열쇠, 퓨즈, 출입 카드, 네 개의 봉인 문장을 모으고 잠긴 문을 하나씩 열어야 합니다.",
@@ -686,6 +727,9 @@
         lede: "你在一座封閉的舊宅中醒來。手電筒的光很窄，走廊很長，而黑暗裡還有別的東西在走動——它會循聲趕來，也會追著你穿過樓層。找到線索，打開那扇門，或者先想辦法活下來。",
         downloadWin: "Windows 下載",
         downloadAndroid: "Android 下載",
+        mirrorHint: "GitHub 下載逾時？試試鏡像：",
+        mirrorWin: "Windows 鏡像",
+        mirrorAndroid: "Android 鏡像",
         hint: "Windows 10 / 11 64 位 · Android 8.0 及以上 · 安裝包未簽名，若遇 SmartScreen 提示請選擇「更多資訊 → 仍要執行」",
         aboutTag: "關於遊戲",
         aboutP1: "《PuzzleEscape》是一款第一人稱室內解謎逃脫遊戲。你在一座封閉的舊宅中醒來，只能借手電筒的微光在走廊、病房與地下室之間摸索：翻找抽屜和櫃子，收集鑰匙、保險絲、通行卡與四枚封印徽記，解開一扇扇鎖住的門。",
