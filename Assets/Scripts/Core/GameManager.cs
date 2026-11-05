@@ -164,6 +164,7 @@ namespace PuzzleEscape.Core
             }
 
             RefreshObjective();
+            AchievementSystem.Instance?.NotifyItemPicked(itemId);
         }
 
         public void MarkDrawerOpened()
@@ -359,6 +360,9 @@ namespace PuzzleEscape.Core
             EndingRank = CalculateRank(FinalElapsed);
             IsWon = true;
 
+            AchievementSystem.Instance?.NotifyWin(GameMapCatalog.CurrentId,
+                DifficultySettings.Current, FinalElapsed, CaughtCount);
+
             if (mapObjectiveOverride)
             {
                 CurrentObjective = "你已离开疗养院";
@@ -380,6 +384,8 @@ namespace PuzzleEscape.Core
             }
 
             CaughtCount++;
+            AchievementSystem.Instance?.NotifyCaught();
+
             if (CaughtCount >= MaxCatches)
             {
                 Lose();
@@ -400,6 +406,7 @@ namespace PuzzleEscape.Core
             EndingTitle = "你被抓住了";
             EndingSubtitle = "第三次失手，走廊的灯彻底熄灭，庄园重新安静下来。";
             IsLost = true;
+            AchievementSystem.Instance?.NotifyLost();
             Lost?.Invoke();
         }
 
@@ -438,6 +445,7 @@ namespace PuzzleEscape.Core
         {
             StartedAt = Time.time;
             HasStarted = true;
+            AchievementSystem.Instance?.NotifyRunStarted();
         }
 
         /// <summary>

@@ -20,6 +20,12 @@ namespace PuzzleEscape.Core
     {
         public const string PrefKey = "PuzzleEscape.Difficulty";
 
+        /// <summary>现实声音（麦克风）检测的开关，开始新游戏时和难度一起选定。</summary>
+        public const string MicPrefKey = "PuzzleEscape.MicNoise";
+
+        /// <summary>现实声音检测的触发阈值（0~190 dB）：超过这个响度怪物就会赶来。</summary>
+        public const float NoiseThresholdDb = 40f;
+
         /// <summary>默认沿用之前的数值（困难）。</summary>
         public const GameDifficulty Default = GameDifficulty.Hard;
 
@@ -27,6 +33,8 @@ namespace PuzzleEscape.Core
 
         private static bool loaded;
         private static GameDifficulty current;
+        private static bool micLoaded;
+        private static bool micEnabled;
 
         /// <summary>每次难度变化自增，怪物用它判断是否需要刷新参数。</summary>
         public static int Revision { get; private set; }
@@ -45,6 +53,22 @@ namespace PuzzleEscape.Core
         }
 
         public static bool MonstersEnabled => Current != GameDifficulty.Peace;
+
+        /// <summary>
+        /// 本局是否用麦克风读取玩家现实中的音量。和平难度没有怪物，运行时不会真正监听。
+        /// </summary>
+        public static bool MicNoiseEnabled
+        {
+            get
+            {
+                if (!micLoaded)
+                {
+                    LoadMic();
+                }
+
+                return micEnabled;
+            }
+        }
 
         /// <summary>追逐速度相对玩家奔跑速度的比例。恶魔 = 1.1（快十分之一）。</summary>
         public static float ChaseRatio
@@ -132,6 +156,25 @@ namespace PuzzleEscape.Core
         public static void Step(int delta)
         {
             Set((GameDifficulty)((int)Current + delta));
+        }
+
+        /// <summary>开始新游戏时和难度一起保存，本局内不再改变。</summary>
+        public static void SetMicNoise(bool enabled)
+        {
+            if (!micLoaded)
+            {
+                LoadMic();
+            }
+
+            micEnabled = enabled;
+            PlayerPrefs.SetInt(MicPrefKey, enabled ? 1 : 0);
+            PlayerPrefs.Save();
+        }
+
+        private static void LoadMic()
+        {
+            micLoaded = true;
+            micEnabled = PlayerPrefs.GetInt(MicPrefKey, 1) == 1;
         }
 
         private static void Load()

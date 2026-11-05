@@ -1,0 +1,338 @@
+# English note and story bodies.
+「日之徽记」是开启西侧封印大门的第一枚钥匙。\n另外两枚分别在档案室与实验室。	"The Sun Emblem is the first key to the west sealed gate.\nThe other two are in the archive and the laboratory."
+「如果你看到这张纸，说明你已经在二层了。\n实验室的机关顺序是：红、蓝、绿。」	"If you are reading this, you are already on the second floor.\nThe laboratory mechanism order is: red, blue, green."
+「西侧封印大门需要日、月、星、影四枚徽记。\n凑齐之后，它们会自行嵌入大门。」	"The west sealed gate needs the Sun, Moon, Star and Shadow emblems.\nOnce all four are gathered, they will embed themselves in the gate."
+「钟停在 4:27，那就是二层档案室的密码。」\n\n	"The clock is stopped at 4:27. That is the code for the second-floor archive."\n\n
+……总闸烧掉了三枚保险丝。备件分别在库房、档案室和储藏室。\n	...The main breaker burned out three fuses. Spares are in the storehouse, archive and storage room.\n
+· 地下车库卷帘门——要车库钥匙和卷帘门曲柄。\n	· Underground garage shutter — needs the garage key and shutter crank.\n
+· 四层东侧消防连廊——要消防连廊钥匙和消防斧。\n\n	· Fourth-floor east fire corridor — needs the fire corridor key and fire axe.\n\n
+· 一层门厅正门——要主门钥匙，还得先让总闸通电。\n	· Ground-floor lobby main gate — needs the main gate key, and the main breaker must be powered first.\n
+八音盒的曲子只写了一半。\n剩下的一半，似乎在客房的照片背后。	The music box melody is only half written.\nThe other half seems to be behind the photograph in the guest room.
+保险丝留给你。去配电间合上电闸，电梯才会恢复。	The fuse is for you. Close the breaker in the utility room, and the elevator will work again.
+被折起的星图	A Folded Star Chart
+壁炉已经很多年没有点燃了。\n茶桌上的银杯，是主人招待客人时用的。	The fireplace has not been lit for years.\nThe silver cups on the tea table were used when the master entertained guests.
+便签背面用铅笔写着一串数字：{code}。\n桌边的旧密码锁也许认这串数字。	A string of numbers is penciled on the back of the note: {code}.\nThe old lock beside the desk may recognize it.
+标签背面有一行小字：烧掉了，别找。	A small line on the back of the label reads: Burned. Do not look for it.
+病历摘录：患者入院第三日起拒绝进食，夜间反复呓语「墙里有人」。\n	Medical excerpt: The patient refused food from the third day after admission and muttered "someone in the walls" every night.\n
+藏书室的地毯中央藏着一块松动的木板。\n下面是一段向地下延伸的窄梯，尽头有一间没有窗户的密室。	A loose floorboard is hidden in the middle of the library rug.\nBelow it, a narrow stair descends into a windowless chamber.
+抽屉里的便签	Note in the Drawer
+抽屉打开了，里面有一枚保险丝和一张便签。	The drawer opens. Inside are a fuse and a note.
+大门被反锁了，锁孔里还插着半截断掉的旧钥匙。	The main gate is bolted from the inside. Half a broken old key is still stuck in the lock.
+大门被反锁了。	The main gate is bolted.
+大门仍缺少：	The gate still needs: 
+档案标签：1978 至 1981 年的病历全部缺失，编号连续跳过。\n	Archive label: All medical records from 1978 to 1981 are missing, with whole sequences of numbers skipped.\n
+档案室门上有一个密码键盘。	There is a keypad on the archive door.
+地窖铁门打开了，下面一片漆黑。	The cellar door opens. Below is pitch black.
+地下封印密室需要四枚徽记才能开启。\n最后一枚是影之徽记，颜色比夜色还深。	The underground sealed chamber needs four emblems to open.\nThe last is the Shadow Emblem, darker than the night itself.
+地下室的空气又冷又潮。\n记得先去锅炉房拿手电筒，否则什么都看不见。	The basement air is cold and damp.\nGet the flashlight from the boiler room first, or you will see nothing.
+地下室很黑，需要照明。	The basement is dark. You need light.
+地下室钥匙在洗衣柜的最下层。\n锅炉房的地窖门后面，就是庄园的地下部分。	The basement key is at the bottom of the laundry cabinet.\nBehind the cellar door in the boiler room lies the underground manor.
+登记人写：库存不够了，先用床单。	The registrar wrote: Not enough stock. Use bedsheets first.
+登记时间之后的所有页都是空白。	Every page after the registration date is blank.
+第三次失手，走廊的灯彻底熄灭，庄园重新安静下来。	On the third failure, the corridor lights go out completely and the manor falls silent again.
+第一次失手	First Failure
+第一次成功离开封闭的宅邸。	Escaped the sealed manor for the first time.
+电梯传动箱的齿轮被拆下来放在工作台上。\n把它装回东翼走廊尽头电梯厅的面板，电梯就能重新运转。	The elevator gear was removed and left on the workbench.\nPut it back into the panel at the east wing elevator hall and the elevator will run again.
+电梯的传动齿轮被拆到地下机械间维修。\n没有它，电梯只会发出空转声。	The elevator gear was taken to the basement machine room for repair.\nWithout it, the elevator only hums uselessly.
+电闸缺少一枚保险丝。\n没有电，电梯和二层密码锁都无法工作。	The breaker is missing a fuse.\nWithout power, neither the elevator nor the second-floor keypad works.
+发现隐藏暗道：藏书室地毯下的密室。	Hidden passage discovered: the chamber beneath the library rug.
+封印大门在你身后缓缓合拢，走廊尽头是清晨的光。	The sealed gate closes slowly behind you. Morning light waits at the end of the corridor.
+封印密室石台上放着影之徽记。	The Shadow Emblem rests on the stone altar in the sealed chamber.
+覆盖保存	Overwrite Save
+该存档属于另一张地图，已跳过读取。	This save belongs to another map and was skipped.
+柜中常客	A Familiar Face in the Cabinet
+盖板被撬开，外挂消防梯在夜风里轻响。你一级一级往下，直到脚踩到湿冷的草地。	The cover is pried open. The outside fire ladder creaks in the night wind. You climb down until your feet touch the cold, wet grass.
+盖板的合页锈死了，徒手撬不开。（需要：	The cover's hinges are rusted shut; you cannot pry it open by hand. (Requires: 
+各层南侧 2 号值班室都留着下一把钥匙；二层药房、三层手术室、四层档案室与钥匙一一对应。\n	Each floor's south duty room No. 2 holds the next key. The 2F pharmacy, 3F surgery room and 4F archive each match one key.\n
+挂钟的指针停在 4:27。\n\n四位密码应当是 0427。	The clock hands are stopped at 4:27.\n\nThe four-digit code should be 0427.
+管线锈死了大半。\n这里是整座庄园最早断电的地方。	Most of the piping is rusted shut.\nThis is where the manor first lost power.
+柜门；只用来保证躲藏期间保持关闭，可以留空。	Cabinet door; only used to keep it closed while hiding. Can be left empty.
+锅炉房里有一张小桌。	There is a small table in the boiler room.
+锅炉房小桌上的手电筒会自动点亮。	The flashlight on the boiler room table turns on automatically.
+还没有记录。阅读房间里的便签、日记或纸张后，会自动记录在这里。	No records yet. Notes, diaries and papers you read are logged here automatically.
+护士长留言	Head Nurse's Message
+花盆标签被水泡花了，只剩这四位还看得清：{code}。\n温室里的旧锁一直空着。	The flowerpot label is water-blurred. Only these four digits remain legible: {code}.\nThe old lock in the greenhouse has always been left open.
+换层后把怪物转过来时与玩家的最小距离。	Minimum distance from the player when moving the monster after a floor change.
+黄铜钥匙在书房西侧书架第二层。	The brass key is on the second shelf of the study's west bookcase.
+恢复默认	Reset to Default
+回 B1 配电间，把保险丝装进总闸	Return to the B1 utility room and put the fuse into the breaker
+回 B1 配电间装保险丝（已装 	Return to the B1 utility room to install fuses (installed 
+机关发出了一声轻响……	The mechanism clicks softly...
+机关归位，陈列柜的玻璃罩打开了。	The mechanism resets, and the display case opens.
+机关顺序：红 → 蓝 → 绿。\n四枚徽记之一就在陈列柜里。	Mechanism order: red → blue → green.\nOne of the four emblems is inside the display case.
+机关顺序错误，三个开关同时复位了。	Wrong mechanism order. All three switches reset.
+机关完成后，陈列柜会刷新星之徽记。	When the mechanism is complete, the Star Emblem appears in the display case.
+机械间里有电梯缺的传动齿轮。\n封印密室在走廊东侧，影之徽记就在那里。	The machine room holds the elevator's missing gear.\nThe sealed chamber is on the east side of the corridor, and the Shadow Emblem is there.
+记录上写着：\"如果我没回来，就把那串数字交给下一个进来的人。\"\n落款是一个被涂掉的名字。	The record says: "If I do not return, give the numbers to the next person who comes in."\nThe signature is a name scribbled out.
+继续向前走到出口区域即可通关。	Keep walking to the exit area to finish.
+夹在百科全书里的借阅卡	Library Card in an Encyclopedia
+兼容旧配置：只有一个点位时使用。	Compatible with the old setup: used when there is only one point.
+检查报告：瞳孔对光反应消失，体温低于 30℃。\n	Examination report: Pupils unresponsive to light, body temperature below 30°C.\n
+检查档案室基座上的月之徽记。	Check the Moon Emblem on the archive pedestal.
+检查封印大门	Inspect the sealed gate
+检查卷帘门卷扬机	Inspect the shutter winch
+检查密码键盘	Inspect the keypad
+检查室	Examination Room
+检查展厅基座。	Check the gallery pedestal.
+借阅卡上只有一个名字：E. Vane。\n日期是 1921 年 10 月 13 日，和酒窖里最旧的那瓶酒同年。\n背面写着一句话：\"地下室不是储藏间，是入口。\"	The library card bears one name: E. Vane.\nThe date is October 13, 1921, the same year as the oldest bottle in the wine cellar.\nThe back reads: "The basement is not a storeroom. It is an entrance."
+进入暗门	Enter the Hidden Door
+进入地下室机械间，找到电梯齿轮并修好电梯	Enter the basement machine room, find the elevator gear and repair the elevator
+酒窖账本的封皮内侧，有人用铅笔留下四个数字：{code}。\n酒架旁的旧锁也许认这个数字。	Someone penciled four numbers inside the wine cellar ledger's cover: {code}.\nThe old lock by the wine rack may recognize it.
+旧窗帘、旧礼服和舞台幕布都被堆在这里。\n有人说，地下室里还有一间上锁的封印密室。	Old curtains, dresses and stage drapes are piled here.\nSome say there is another locked sealed chamber in the basement.
+卷帘门在刺耳的摩擦声里升起，冷雾灌进车库，你没有再回头。	The shutter rises with a harsh screech. Cold mist pours into the garage. You do not look back.
+卷扬机的摇柄插槽是空的。（需要：	The winch's crank slot is empty. (Requires: 
+卷扬机没有电，指示灯是灭的。得先合上 B1 配电间的总闸。	The winch has no power and its indicator is dark. Close the main breaker in the B1 utility room first.
+开柜 	Open Cabinet 
+开门后自动关闭的等待时间，0 表示不自动关闭。	Time before the door closes automatically. 0 means it stays open.
+蜡烛烧尽了。	The candle burns out.
+老练的逃亡者	Experienced Escapee
+累计被怪物抓住 10 次。	Be caught by monsters 10 times in total.
+累计打开 50 个柜子或抽屉。	Open 50 cabinets or drawers in total.
+累计躲进藏身处 10 次。	Hide in hiding spots 10 times in total.
+累计解开 5 个密码锁。	Solve 5 keypad locks in total.
+累计收集 35 种不同的道具。	Collect 35 different items in total.
+累计逃脱 3 次。	Escape 3 times in total.
+累计游玩 1 小时。	Play for 1 hour in total.
+离开藏身处	Leave the hiding spot
+里找到了 · 	and found · 
+里只剩下一层灰。	contains only a layer of dust.
+连廊应急灯没亮，梯口一片漆黑，看不清脚下。	The fire corridor emergency light is off. The ladder opening is pitch black, and you cannot see your feet.
+两处噩梦	Two Nightmares
+麦克风启动失败。	Microphone failed to start.
+没有怪物，专心探索解谜	No monsters. Focus on exploring and puzzles.
+没有检测到可用的麦克风。	No usable microphone was found.
+没有可丢弃的物品。	There is nothing to drop.
+没有可读取的存档。	There is no save to load.
+门禁没有电，按下去只有继电器空响。得先合上 B1 的总闸。	The door lock has no power; pressing it only makes the relay click. Close the B1 main breaker first.
+门上是老式机械锁，锁孔里还留着旧钥匙的刮痕。	The door has an old mechanical lock, its keyhole scarred by an old key.
+密码键盘（已解锁）	Keypad (Unlocked)
+密码正确，找到了一份隐藏记录。	Correct code. A hidden record was found.
+那个人三个月前就已经登记死亡。	That person was registered dead three months ago.
+你把蜡烛放在了地上。	You set the candle on the ground.
+你被抓住了	You Were Caught
+你被抓住了 · 剩余机会 	You Were Caught · Chances Left 
+你从藏身处出来。	You come out of hiding.
+你带着庄园的秘密离开。封印并未消失，只是终于有人记住了它。	You leave with the manor's secret. The seal is not gone; someone has finally remembered it.
+你躲进了	You hid in 
+你顺着梯子回到了锅炉房。	You climb the ladder back to the boiler room.
+你顺着梯子爬进了黑暗的地下室。	You climb down the ladder into the dark basement.
+你顺着梯子再次进入地下室。	You climb down the ladder into the basement again.
+你已经通关。	You have already finished.
+你在一座两层庄园的书房里醒来。\n找到日、月、星、影四枚徽记，打开西侧的封印大门。	You wake in the study of a two-story manor.\nFind the Sun, Moon, Star and Shadow emblems and open the west sealed gate.
+你在庄园书房中醒来。找到四枚徽记，打开西侧封印大门。	You wake in the manor study. Find the four emblems and open the west sealed gate.
+年份最好的一瓶酒还留在架子上。\n酒标上画着和封印大门相同的徽记。	The best bottle of the year is still on the rack.\nIts label bears the same emblem as the sealed gate.
+爬回藏书室	Climb Back to the Library
+攀爬梯子返回锅炉房	Climb the Ladder Back to the Boiler Room
+配电间记录	Utility Room Record
+配电间在一层核心区，检查电闸。	The utility room is in the ground-floor core. Check the breaker.
+破译者	Decoder
+前台登记：最后一位来访者没有留下姓名，只写了「来找我姐姐」。\n	Reception record: The last visitor left no name, only "here to find my sister."\n
+前台登记簿	Reception Register
+前往东翼洗衣房，寻找地下室钥匙	Go to the east wing laundry room and find the basement key
+前往东翼走廊尽头的电梯厅，乘电梯前往二层	Go to the elevator hall at the end of the east wing corridor and ride to the second floor
+前往二层西端的封印大门	Go to the sealed gate at the west end of the second floor
+墙上的划痕记录着每一次开门。\n最后一行写着：\"四枚徽记不是钥匙，是四个证词。\"\n桌角压着一张 1921 年的酒窖收据。	Scratches on the wall record every opening.\nThe last line reads: "The four emblems are not keys. They are four testimonies."\nA 1921 wine cellar receipt is pinned under the desk corner.
+撬开消防梯盖板	Pry Open the Fire Ladder Cover
+清单上有一行不属于这里的衣物：\n\"小主人的白衬衫，领口有锈色，洗不掉。\"\n日期正好是封印大门关闭的那一天。	One line on the list does not belong here:\n"The young master's white shirt. The collar has rust-colored stains that will not wash out."\nThe date is exactly the day the sealed gate closed.
+去 1F 南侧 2 号值班室，抽屉里有病房钥匙	Go to the 1F south duty room No. 2. The ward key is in the drawer.
+去 B1 南侧 1 号储藏室，储物柜里还有一枚保险丝	Go to the B1 south storage room No. 1. Another fuse is in the locker.
+去 B1 南侧 4 号值班室，抽屉里有职员钥匙	Go to the B1 south duty room No. 4. The staff key is in the drawer.
+去东翼的洗衣房看看。	Take a look at the east wing laundry room.
+全身而退	Walk Away Unharmed
+日志里夹着一片干枯的黑色花瓣。\n页脚写着：\"这些花不是装饰，它们会记住谁来过。\"	A dried black petal is pressed in the log.\nThe footer reads: "These flowers are not decorations. They remember who came."
+如果你还能读到这里——别回头。	If you can still read this, do not look back.
+如果仍然卡住，按提示逐级查看；主线密码通常在便签或挂钟上。	If you are still stuck, check hints level by level. Main-path codes are usually on notes or clocks.
+三枚保险丝归位，总闸合上——整栋楼的灯一格一格亮了起来。	All three fuses are in place and the main breaker closes. The lights come on one section at a time.
+三枚徽记嵌入大门，封印解除。	The three emblems embed in the gate. The seal is released.
+散步速度相对玩家步行速度的比例。	Patrol speed relative to the player's walking speed.
+上到 2F，在南侧 2 号值班室抽屉里找药库钥匙	Go up to 2F and find the pharmacy key in the south duty room No. 2 drawer
+上到 3F，在南侧 2 号值班室抽屉里找手术区钥匙	Go up to 3F and find the surgery key in the south duty room No. 2 drawer
+设备记录：锅炉整夜超压运行，排气口有烧焦的布片。\n	Equipment record: The boiler ran over-pressurized all night. Burnt cloth was found at the exhaust.\n
+设备间	Equipment Room
+实验日志	Experiment Log
+实验室里有一个颜色机关。	There is a color mechanism in the laboratory.
+食材早已腐烂。\n有人把保险丝和工具都收进了储藏室。	The food has long rotted.\nSomeone put the fuses and tools away in the storage room.
+食品储藏	Food Storage
+食品柜抽屉	Food Cabinet Drawer
+使用密码键盘	Use Keypad
+使用密码锁	Use Lock
+室内解谜 · 第一人称	Indoor Puzzle · First Person
+收藏家	Collector
+手记	Notes
+手术记录：打开胸腔后未见任何异常，主刀医生中途离场。\n	Surgery record: No abnormality was found after opening the chest. The lead surgeon left midway.\n
+首次生成时与玩家的最小距离。	Minimum distance from the player on first spawn.
+书房里还有一件会走的东西。	Something else walks in the study.
+书桌上有便签，书架上有能拿走的东西。	There is a note on the desk and something you can take on the bookshelf.
+输入 4 位密码，按回车确认	Enter the 4-digit code and press Enter
+顺序是红 → 蓝 → 绿。	The order is red → blue → green.
+四枚徽记：日、月、星、影。\n日、月、星分别在展厅、档案室与实验室，影之徽记在庄园地下。\n把四枚徽记带到西侧封印大门。	Four emblems: Sun, Moon, Star, Shadow.\nThe Sun, Moon and Star are in the gallery, archive and laboratory. The Shadow Emblem is underground.\nBring all four to the west sealed gate.
+搜刮成性	Compulsive Looter
+锁着，需要：	Locked. Requires: 
+他从未见过这名护士。	He had never seen this nurse before.
+台球记分牌停在 {code}，像有人故意留下的顺序。\n球桌边的密码锁或许在等这组编号。	The billiard scoreboard is stopped at {code}, as if someone left the sequence on purpose.\nThe lock by the table may be waiting for those numbers.
+台球室的赌局记录	Billiard Room Betting Record
+逃出庄园	Escape the Manor
+逃脱结局	Escape Ending
+逃脱用时  	Escape Time  
+体力 100 / 100	Stamina 100 / 100
+铁门在身后合上，夜雾漫过台阶，你终于没有再回头。	The iron gate closes behind you. Night mist rolls over the steps. You do not look back again.
+停电后的疗养院只剩应急灯。\n四层病房与一间地下室，每一间都留着没写完的记录。	After the blackout, only emergency lights remain in the sanatorium.\nFour floors of wards and a basement, each room holding unfinished records.
+通行卡从 1F 南侧 1 号病房开始，一层层往上去。\n\n	The access cards start in 1F south ward No. 1 and go up floor by floor.\n\n
+推荐难度，接近原有的怪物手感	Recommended. Close to the original monster balance.
+推开房门	Push Open the Door
+拖动旋转 · 滚轮缩放	Drag to rotate · Scroll to zoom
+完成	Done
+往总闸里装保险丝	Install the fuse in the main breaker
+唯一物品	Unique Item
+维修工写着：不要下去看，也别问是谁按的启动。	The repairman wrote: Do not go down to look, and do not ask who pressed start.
+未命名记录	Unnamed Record
+未探索	Unexplored
+未知目标	Unknown Objective
+温室培育日志	Greenhouse Cultivation Log
+我们没有人敢上去。	None of us dared go up.
+无声潜行	Silent Steps
+舞会已经取消了很多年。\n钢琴上的灰尘厚得像一层绒布。	The ball has been canceled for years.\nThe dust on the piano is thick as felt.
+物品栏已满，无法拾取。	Your inventory is full. Cannot pick up.
+物资登记：裹尸袋三个月内领用了两百多个。\n	Supply record: Over two hundred body bags were used within three months.\n
+西侧走廊尽头有一扇被封死的大门。\n主人说，只有四枚徽记才能解开封印。	At the end of the west corridor is a sealed gate.\nThe master said only four emblems can break the seal.
+洗衣清单最下面多了一行手写数字：{code}。\n墨迹很新，不像这里的旧东西。	A handwritten line of numbers was added at the bottom of the laundry list: {code}.\nThe ink is fresh, unlike everything else here.
+下到 B1，在北侧 1 号设备间（洗衣房）抽屉里找库房钥匙	Go down to B1 and find the storehouse key in the north equipment room (laundry) drawer No. 1
+下面有人回：别数房间。	Someone replied below: Do not count the rooms.
+先观察当前房间，寻找便签、抽屉或异常物件。	First examine the current room for notes, drawers or anything unusual.
+先完成红 → 蓝 → 绿机关。	First complete the red → blue → green mechanism.
+掀开地毯下的暗门	Open the Hidden Door Under the Rug
+显示模式	Display Mode
+线索提示：藏书室便签的背面写着四位数字。	Hint: Four digits are written on the back of the library note.
+线索提示：观测室星图角落圈着四位数字。	Hint: Four digits are circled in the corner of the observatory star chart.
+线索提示：酒窖账本封皮内侧写着四位数字。	Hint: Four digits are written inside the wine cellar ledger cover.
+线索提示：密码与房间里的时间有关	Hint: The code is related to the time in the room.
+线索提示：台球室记分牌停在四位数字上。	Hint: The billiard scoreboard stopped on four digits.
+线索提示：温室花盆标签上残留四位数字。	Hint: Four digits remain on the greenhouse flowerpot label.
+线索提示：洗衣清单底部有一行手写数字。	Hint: A handwritten line of numbers is at the bottom of the laundry list.
+想活着出去，只有三条路：\n	There are only three ways out alive:\n
+星图角落被人圈出四个数字：{code}。\n望远镜旁的旧锁似乎就是为它准备的。	Four digits are circled in the corner of the star chart: {code}.\nThe old lock by the telescope seems made for it.
+星图上圈出的不是任何已知星座，而是一座倒映在地下的庄园。\n角落里写着：\"门不是出口，是镜子。\"	The circled shape is not a known constellation but a manor reflected underground.\nIn the corner: "The door is not an exit. It is a mirror."
+星之徽记在实验室陈列柜里。	The Star Emblem is in the laboratory display case.
+行政记录：全院职工共 96 人，本周缺勤 41 人。\n	Administration record: The sanatorium has 96 staff; 41 were absent this week.\n
+休息室留言板：谁能告诉我，为什么走廊尽头总是同一扇门？\n	Break room board: Can anyone tell me why the same door always waits at the end of the corridor?\n
+需要持有的道具 Id；留空表示普通可打开的柜子。	Item ID required; leave empty for a normal openable cabinet.
+需要日、月、星、影四枚徽记。	Requires the Sun, Moon, Star and Shadow emblems.
+需要先恢复庄园供电。	The manor's power must be restored first.
+选择要读取的存档槽位	Choose a save slot to load
+选择要保存到的存档槽位	Choose a save slot to save to
+选中后主界面文案会切换，点「开始游戏」进入该地图	Selecting changes the main menu text. Press "Start Game" to enter that map.
+药品清单：镇静剂、止痛剂全部领空，签字人一栏是同一个名字。\n	Medicine list: All sedatives and painkillers are gone. The same name signs every line.\n
+钥匙转动，门开了。	The key turns. The door opens.
+也可以寻找隐藏密码锁，完成额外记录。	You can also find hidden keypad locks for extra records.
+夜行者	Night Walker
+夜巡疗养院	Night Watch Sanatorium
+一局中从未奔跑，仍然逃了出去。	Escaped without ever sprinting in one run.
+医生在结论栏只写了两个字：不是。	In the conclusion column the doctor wrote only: No.
+已保存到槽位 	Saved to slot 
+已丢弃 · 	Dropped · 
+已读笔记会自动记录在档案里，可以打开档案查看。	Notes you read are logged in the case file automatically.
+已解锁 	Unlocked 
+已收集 0 / 32	Collected 0 / 32
+已选择「	Selected "
+异变那晚，楼里所有电子锁同时落下，人也一个接一个不见了。\n	On the night of the incident, every electronic lock in the building closed at once, and people vanished one by one.\n
+影之徽记是封印大门的第四枚徽记。\n把它和日、月、星一起带到二层西端的大门。	The Shadow Emblem is the fourth emblem of the sealed gate.\nBring it with the Sun, Moon and Star to the gate at the west end of the second floor.
+影之徽记在地下室封印密室。	The Shadow Emblem is in the basement sealed chamber.
+用病房钥匙打开 1F 南侧 4 号治疗室，柜子里有物品柜钥匙	Use the ward key to open 1F south treatment room No. 4. The locker key is in the cabinet.
+用车库钥匙打开 B1 南侧 6 号车库，工具柜里有卷帘门曲柄	Use the garage key to open B1 south garage No. 6. The shutter crank is in the tool cabinet.
+用地下室钥匙打开锅炉房地窖铁门，然后顺着梯子下去。	Use the basement key to open the boiler room cellar door, then climb down.
+用地下室钥匙打开锅炉房的地窖铁门	Use the basement key to open the boiler room cellar door
+用黄铜钥匙打开储藏室的抽屉	Use the brass key to open the storage room drawer
+用库房钥匙打开 B1 北侧 2 号储藏室，柜子里有保险丝	Use the storehouse key to open B1 north storage room No. 2. A fuse is in the cabinet.
+用时 	Time 
+用物品柜钥匙打开 4F 南侧 3 号病房，柜子里有值班钥匙	Use the locker key to open 4F south ward No. 3. The duty key is in the cabinet.
+用消防连廊钥匙打开 4F 东侧的门，再用消防斧撬开消防梯口	Use the fire corridor key to open the 4F east door, then use the fire axe to pry open the fire ladder hatch.
+用钥匙打开 2F 药房，柜子里有三层通行卡	Use the key to open the 2F pharmacy. The 3F access card is in the cabinet.
+用钥匙打开 3F 手术室，柜子里有四层通行卡	Use the key to open the 3F operating room. The 4F access card is in the cabinet.
+用院长室钥匙打开 4F 北侧 1 号档案室，柜子里有主门钥匙	Use the director's key to open 4F north archive room No. 1. The main gate key is in the cabinet.
+用值班钥匙打开 4F 南侧 2 号值班室，抽屉里有院长室钥匙	Use the duty key to open 4F south duty room No. 2. The director's key is in the drawer.
+用职员钥匙打开 B1 南侧 5 号档案室，柜子里有保险丝	Use the staff key to open B1 south archive room No. 5. A fuse is in the cabinet.
+游戏已保存到槽位 	Game saved to slot 
+与时间赛跑	Race Against Time
+月之徽记在二层档案室。	The Moon Emblem is in the second-floor archive.
+阅读标本室便签	Read the Specimen Room Note
+阅读餐厅便签	Read the Dining Room Note
+阅读藏书室便签	Read the Library Note
+阅读柴房便签	Read the Woodshed Note
+阅读厨房清单	Read the Kitchen List
+阅读储藏室清单	Read the Storage Room List
+阅读档案室便签	Read the Archive Note
+阅读地下储藏室便签	Read the Underground Storage Note
+阅读封印密室便签	Read the Sealed Chamber Note
+阅读工匠便签	Read the Craftsman's Note
+阅读观测室笔记	Read the Observatory Notes
+阅读锅炉房便签	Read the Boiler Room Note
+阅读会客厅便签	Read the Parlor Note
+阅读机械间便签	Read the Machine Room Note
+阅读酒窖便签	Read the Wine Cellar Note
+阅读客房便签	Read the Guest Room Note
+阅读门厅便签	Read the Lobby Note
+阅读密室手记	Read the Chamber Notes
+阅读配电间记录	Read the Utility Room Record
+阅读仆役房便签	Read the Servants' Room Note
+阅读实验日志	Read the Experiment Log
+阅读书房便签	Read the Study Note
+阅读书桌便签，并检查书架第二层的黄铜钥匙。	Read the desk note and check the brass key on the second shelf.
+阅读水泵房便签	Read the Pump Room Note
+阅读台球室便签	Read the Billiard Room Note
+阅读温室便签	Read the Greenhouse Note
+阅读卧室里的纸条	Read the Note in the Bedroom
+阅读吸烟室便签	Read the Smoking Room Note
+阅读洗衣房便签	Read the Laundry Note
+阅读宴会厅便签	Read the Banquet Hall Note
+阅读音乐室便签	Read the Music Room Note
+阅读展厅说明	Read the Gallery Plaque
+阅读织物间便签	Read the Textile Room Note
+再次点击「确认删除」会永久删除槽位 	Clicking "Confirm Delete" again will permanently delete slot 
+在 15 分钟内完成一次逃脱。	Escape once within 15 minutes.
+在 1F 南侧 1 号病房的柜子里找到二层通行卡	Find the 2F access card in the 1F south ward No. 1 cabinet
+在 4F 北侧 2 号储藏室的柜子里找消防连廊钥匙	Find the fire corridor key in the 4F north storage room No. 2 cabinet
+在 4F 南侧 4 号治疗室的柜子里找消防斧	Find the fire axe in the 4F south treatment room No. 4 cabinet
+在 B1 北侧 3 号储藏室的柜子里找车库钥匙	Find the garage key in the B1 north storage room No. 3 cabinet
+在车库卷扬机上装好曲柄，摇起卷帘门离开	Install the crank on the garage winch, raise the shutter and leave
+在档案室门旁输入挂钟密码	Enter the clock code beside the archive door
+在档案室取得月之徽记	Get the Moon Emblem from the archive
+在恶魔难度下成功逃脱。	Escape successfully on Demon difficulty.
+在锅炉房取得手电筒	Get the flashlight from the boiler room
+在实验室按提示重启机关	Restart the mechanism in the laboratory as instructed
+在实验室取得星之徽记	Get the Star Emblem from the laboratory
+在书房书架上寻找黄铜钥匙	Look for the brass key on the study bookshelf
+在同一局里被抓两次后仍然逃脱。	Escape after being caught twice in the same run.
+在一层展厅取得日之徽记	Get the Sun Emblem from the ground-floor gallery
+在一局中没有被怪物抓住并成功逃脱。	Escape a run without being caught by monsters.
+展厅说明	Gallery Plaque
+长桌上的酒已经放了很久。\n仆人每晚都会把餐具摆好，像是在等待一场不会开始的晚宴。	The wine on the long table has stood there for years.\nThe servants set the table every night, as if waiting for a banquet that will never begin.
+账本记录了 1921 年到 1948 年的每一次封存。\n最后一页被撕掉了，只剩下半句话：\"四枚徽记不能同时离开庄园。\"	The ledger records every sealing from 1921 to 1948.\nThe last page was torn out, leaving half a sentence: "The four emblems must never leave the manor together."
+照片背后写着一行字：\n「四枚徽记，日、月、星、影。」	One line is written on the back:\n"Four emblems: Sun, Moon, Star, Shadow."
+这个槽位还没有存档。	This slot has no save yet.
+这些标本都来自庄园的地下。\n其中有几件，似乎比庄园本身还要古老。	These specimens all come from beneath the manor.\nSome seem older than the manor itself.
+帧率	Frame Rate
+真相结局	Truth Ending
+正常	Normal
+织物间便签	Textile Room Note
+执迷不悟	Unrepentant
+值班护士在页脚补了一句：今天又有两间病房的人同时安静了下来。	The duty nurse added at the footer: Two more wards went silent at the same time today.
+值班日志：凌晨两点，四楼传来拖拽声，持续到天亮。\n	Duty log: At 2 a.m., dragging sounds came from the fourth floor and continued until dawn.\n
+植物早已枯萎，玻璃上却还留着手写的字：\n「沿走廊向西，尽头是封印。」	The plants have long withered, but handwriting remains on the glass:\n"Follow the corridor west. The seal is at the end."
+治疗记录：镇静剂剂量加倍后，病人仍能准确说出护士的名字。\n	Treatment record: Even after doubled sedative doses, the patient could still name the nurse accurately.\n
+中	Medium
+重新开始	Restart
+主人把最后的钥匙交给了档案室。\n仆人们只负责守住这层走廊。	The master gave the last key to the archive.\nThe servants were only meant to guard this corridor.
+主音量	Master Volume
+助手在背面写：灯灭过一次，再亮时台上的人已经坐起来了。	The assistant wrote on the back: The lights went out once. When they came back, the person on stage was already sitting up.
+庄园与疗养院都成功逃脱过。	Escaped from both the manor and the sanatorium.
+庄园主把建筑图纸锁在了楼上的档案室。\n西翼的走廊像一张打结的网。	The lord locked the building plans in the upstairs archive.\nThe west wing corridors are like a knotted web.
+装齐之前，一层门厅的电子门禁和车库卷扬机都是断电的。\n\n—— 后勤 老周	Until all are installed, the ground-floor lobby door lock and garage winch have no power.\n\n— Logistics, Old Zhou
+追到多近判定为抓到玩家。	Distance at which the monster catches the player.
+自定义控制	Custom Controls
+总闸缺三枚保险丝：地下库房、地下档案室、地下储藏室各一枚。\n	The main breaker is missing three fuses: one in the underground storehouse, one in the underground archive and one in the underground storage room.\n
+总闸已经合上了，指示灯是绿的。	The main breaker is closed and the indicator is green.
+走出疗养院	Leave the Sanatorium
+走路	Walk
+最后一局棋没有下完。\n球杆被靠在墙边，像是在等谁回来。	The last game of chess was never finished.\nThe cue leans against the wall, as if waiting for someone to return.
+最后一条记录写着：不要再往地下室送人了，名单已经对不上。	The last entry reads: Stop sending people to the basement. The lists no longer match.
+最后一位客人离开后，这里再没人来过。\n墙上的徽记却一直亮着。	No one has come since the last guest left.\nThe emblem on the wall has stayed lit.

@@ -1,0 +1,157 @@
+# English world labels: rooms, containers, note titles.
+书房	Study
+书房便签	Study Note
+书房抽屉	Study Drawer
+书房挂钟	Study Clock
+储藏室	Storage Room
+储藏室清单	Storage Room List
+厨房	Kitchen
+厨房抽屉	Kitchen Drawer
+厨房清单	Kitchen List
+档案室	Archive
+档案室便签	Archive Note
+档案室抽屉	Archive Drawer
+档案标签	Archive Label
+实验室	Laboratory
+实验室边柜	Laboratory Side Cabinet
+展厅	Gallery
+展厅边柜	Gallery Side Cabinet
+展厅说明	Gallery Plaque
+会客厅	Parlor
+会客厅边柜	Parlor Side Cabinet
+会客厅便签	Parlor Note
+餐厅	Dining Room
+餐厅边柜	Dining Room Side Cabinet
+餐厅便签	Dining Room Note
+画廊边柜	Gallery Hall Cabinet
+音乐室	Music Room
+音乐室便签	Music Room Note
+客房	Guest Room
+客房边柜	Guest Room Side Cabinet
+客房便签	Guest Room Note
+温室	Greenhouse
+温室便签	Greenhouse Note
+温室培育日志	Greenhouse Cultivation Log
+锅炉房便签	Boiler Room Note
+酒窖	Wine Cellar
+酒窖便签	Wine Cellar Note
+酒窖抽屉	Wine Cellar Drawer
+酒窖账本的一页	A Page from the Wine Cellar Ledger
+酒窖账本	Wine Cellar Ledger
+台球室	Billiard Room
+台球室便签	Billiard Room Note
+台球室的赌局记录	Billiard Room Betting Record
+观测室	Observatory
+观测室笔记	Observatory Notes
+宴会厅便签	Banquet Hall Note
+吸烟室	Smoking Room
+吸烟室便签	Smoking Room Note
+卧室	Bedroom
+卧室抽屉	Bedroom Drawer
+卧室里的纸条	Note in the Bedroom
+洗衣房	Laundry
+洗衣房便签	Laundry Note
+洗衣柜	Laundry Cabinet
+洗衣清单	Laundry List
+仆役房便签	Servants' Room Note
+仆役房旧柜	Old Servants' Cabinet
+仆役洗衣清单	Servants' Laundry List
+配电间	Utility Room
+配电间便条	Utility Room Note
+配电间记录	Utility Room Record
+机械间便签	Machine Room Note
+机械间抽屉	Machine Room Drawer
+地下储藏室便签	Underground Storage Note
+地下酒窖抽屉	Underground Wine Cellar Drawer
+地下旧柜	Old Underground Cabinet
+地下值班室	Underground Duty Room
+地下值班室抽屉	Underground Duty Room Drawer
+封印密室便签	Sealed Chamber Note
+封印密室	Sealed Chamber
+封印室石柜	Sealed Chamber Stone Cabinet
+密室手记	Chamber Notes
+隐藏密室手记	Hidden Chamber Notes
+柴房便签	Woodshed Note
+柴房柜子	Woodshed Cabinet
+工具柜	Tool Cabinet
+食品柜抽屉	Food Cabinet Drawer
+食品储藏	Food Storage
+餐具柜	Sideboard
+标本室便签	Specimen Room Note
+标本柜抽屉	Specimen Cabinet Drawer
+织物间便签	Textile Room Note
+织物间衣柜	Textile Room Wardrobe
+剧场道具柜	Theater Prop Cabinet
+水泵房便签	Pump Room Note
+水泵房柜子	Pump Room Cabinet
+冰窖	Ice Cellar
+冰窖木柜	Ice Cellar Wooden Cabinet
+工匠便签	Craftsman's Note
+工匠	The Craftsman
+检查室	Examination Room
+办公室	Office
+办公室值班表	Office Duty Roster
+休息室	Break Room
+休息室留言	Break Room Message
+档案记录	Archive Record
+设备记录	Equipment Record
+物资登记簿	Supply Register
+前台登记簿	Reception Register
+药品清单	Medicine List
+手术记录	Surgery Record
+治疗记录	Treatment Record
+值班日志	Duty Log
+病房	Ward
+病房病历	Ward Records
+病房钥匙	Ward Key
+药房	Pharmacy
+手术室	Operating Room
+治疗室	Treatment Room
+值班室	Duty Room
+护士长留言	Head Nurse's Message
+借阅卡	Library Card
+夹在百科全书里的借阅卡	Library Card in an Encyclopedia
+记录	Record
+日志	Log
+清单	Inventory
+纸条	Note
+便签	Note
+手记	Notes
+实验日志	Experiment Log
+档案	Archive
+档案室	    Archive
+门厅	Lobby
+门厅便签	Lobby Note
+门厅抽屉	Lobby Drawer
+地下储藏室	Underground Storage
+地下室	Basement
+封印大门	Sealed Gate
+封印大门（已开启）	Sealed Gate (Opened)
+电闸（已开启）	Breaker (On)
+配电箱（已通电）	Breaker Box (Powered)
+卷帘门卷扬机	Shutter Winch
+车库	Garage
+车库卷帘门	Garage Shutter
+车库卷帘门（已打开）	Garage Shutter (Opened)
+消防梯	Fire Ladder
+消防梯（已打开）	Fire Ladder (Opened)
+消防连廊	Fire Corridor
+电梯	Elevator
+电梯厅	Elevator Hall
+东翼走廊	East Wing Corridor
+西翼	West Wing
+东翼	East Wing
+南廊	South Corridor
+南翼	South Wing
+主楼	Main Building
+藏书室	Library
+藏书室便签	Library Note
+藏书室边柜	Library Side Cabinet
+日光房	Sunroom
+日光房抽屉	Sunroom Drawer
+闷井	Dead Well
+封井	Sealed Well
+楼梯	Stairs
+吊灯	Chandelier
+壁炉	Fireplace
+钢琴	Piano

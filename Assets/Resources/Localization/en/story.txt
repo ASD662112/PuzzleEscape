@@ -1,0 +1,120 @@
+# English objectives, prompts, notes and story text.
+搜查书房，寻找线索	Search the study for clues
+在书房书架上寻找黄铜钥匙	Look for the brass key on the study bookshelf
+用黄铜钥匙打开储藏室的抽屉	Use the brass key to open the storage room drawer
+查看书房挂钟，记下四位密码	Check the study clock and note the four-digit code
+把保险丝装进配电间的电闸	Put the fuse into the utility room breaker
+前往东翼洗衣房，寻找地下室钥匙	Go to the east wing laundry room and find the basement key
+在锅炉房取得手电筒	Get the flashlight from the boiler room
+用地下室钥匙打开锅炉房的地窖铁门	Use the basement key to open the cellar door in the boiler room
+进入地下室机械间，找到电梯齿轮并修好电梯	Enter the basement machine room, find the elevator gear and repair the elevator
+前往东翼走廊尽头的电梯厅，乘电梯前往二层	Go to the elevator hall at the end of the east wing corridor and ride to the second floor
+前往二层西端的封印大门	Go to the sealed gate at the west end of the second floor
+在档案室门旁输入挂钟密码	Enter the clock code beside the archive door
+在实验室按提示重启机关	Restart the mechanism in the laboratory as instructed
+在一层展厅取得日之徽记	Get the Sun Emblem from the ground-floor gallery
+在档案室取得月之徽记	Get the Moon Emblem from the archive
+在实验室取得星之徽记	Get the Star Emblem from the laboratory
+返回地下室的封印密室，取得影之徽记	Return to the sealed chamber in the basement and get the Shadow Emblem
+穿过封印大门，离开庄园	Cross the sealed gate and leave the manor
+你已逃出庄园	You escaped the manor
+你已离开疗养院	You have left the sanatorium
+搜查书房，寻找线索	Search the study for clues
+在书房书架上寻找黄铜钥匙	Look for the brass key on the study bookshelf
+用黄铜钥匙打开储藏室的上锁抽屉，里面会有保险丝。	Use the brass key to open the locked storage drawer. A fuse is inside.
+用黄铜钥匙打开储藏室的抽屉	Use the brass key to open the storage room drawer
+抽屉锁着。也许一把	The drawer is locked. Perhaps a 
+能打开它。	can open it.
+保险丝装好了（	Fuse installed (
+）。配电箱还差 	). The breaker box still needs 
+枚。	more.
+三枚保险丝归位，总闸合上——整栋楼的灯一格一格亮了起来。	All three fuses are in place and the main breaker closes. The lights come on one section at a time.
+电源接通了，电梯与二层的密码锁恢复供电。	Power is restored. The elevator and the second-floor keypad work again.
+配电间在一层核心区，检查电闸。	The utility room is in the ground-floor core. Check the breaker.
+配电箱（已通电）	Breaker Box (Powered)
+电闸（已开启）	Breaker (On)
+电闸里缺少	The breaker is missing 
+电闸缺少一枚保险丝。\n没有电，电梯和二层密码锁都无法工作。	The breaker is missing a fuse.\nWithout power, the elevator and second-floor keypad cannot work.
+保险丝座还是空的，铜片被烧黑了。	The fuse holder is empty, its copper contacts burnt black.
+检查电闸	Check the breaker
+检查门锁	Check the lock
+检查房门	Check the door
+检查书架，尤其是视线平齐的第二层。	Check the bookshelf, especially the second shelf at eye level.
+查看书桌上的便签和墙上的挂钟。	Read the note on the desk and check the clock on the wall.
+先从书桌和书架开始搜。	Start with the desk and the bookshelf.
+钥匙应该就在书房里。	The key should be in the study.
+黄铜钥匙在书房西侧书架第二层。	The brass key is on the second shelf of the study's west bookcase.
+抽屉打开了，里面有一枚保险丝和一张便签。	The drawer opens. Inside are a fuse and a note.
+厨房	Kitchen
+厨房抽屉	Kitchen Drawer
+厨房清单	Kitchen List
+储藏室清单	Storage Room List
+储藏室	Storage Room
+储藏室在一层核心区。	The storage room is in the ground-floor core.
+抽屉	Drawer
+抽屉（已打开）	Drawer (Opened)
+柜子	Cabinet
+柜中常客	A Familiar Face in the Cabinet
+打开上锁的抽屉	Open the locked drawer
+找一个上锁的抽屉。	Find a locked drawer.
+找一扇需要钥匙的铁门。	Find an iron door that needs a key.
+打开地窖铁门	Open the cellar door
+地窖铁门打开了，下面一片漆黑。	The cellar door opens. Below is pitch black.
+地窖铁门锁着。需要一把	The cellar door is locked. It needs a 
+地窖入口在锅炉房。	The cellar entrance is in the boiler room.
+地下室的空气又冷又潮。\n记得先去锅炉房拿手电筒，否则什么都看不见。	The basement air is cold and damp.\nGet the flashlight from the boiler room first, or you will see nothing.
+地下室很黑，需要照明。	The basement is dark. You need light.
+用地下室钥匙打开锅炉房地窖铁门，然后顺着梯子下去。	Use the basement key to open the boiler room cellar door, then climb down the ladder.
+从地窖梯子下去，沿地下室走廊东侧走。	Go down the cellar ladder and follow the east side of the basement corridor.
+进入地下室	Enter the Basement
+地下室	Basement
+地下室钥匙	Basement Key
+地下室钥匙不在核心区。	The basement key is not in the core area.
+地下室钥匙在洗衣柜的最下层。\n锅炉房的地窖门后面，就是庄园的地下部分。	The basement key is at the bottom of the laundry cabinet.\nBehind the cellar door in the boiler room lies the underground manor.
+洗衣房便签	Laundry Note
+洗衣房抽屉里的钥匙，齿口很浅，只能开地下库房。	The key in the laundry drawer is shallow-toothed and only opens the underground storehouse.
+洗衣柜	Laundry Cabinet
+洗衣清单	Laundry List
+锅炉房便签	Boiler Room Note
+锅炉房里有一张小桌。	There is a small table in the boiler room.
+锅炉房小桌上的手电筒会自动点亮。	The flashlight on the boiler room table turns on automatically.
+守夜人的手电。灯罩上缠着一圈歪斜的胶布，像是有人在黑暗里匆忙缠上去的。	The night watchman's light. Tape is wrapped crookedly around the lens, as if done hastily in the dark.
+手电筒	Flashlight
+电梯	Elevator
+电梯齿轮	Elevator Gear
+电梯传动箱缺失的铜制齿轮，沉甸甸的。	The heavy brass gear missing from the elevator gearbox.
+电梯传动箱的齿轮被拆下来放在工作台上。\n把它装回东翼走廊尽头电梯厅的面板，电梯就能重新运转。	The elevator gear was removed and left on the workbench.\nPut it back into the panel at the elevator hall at the end of the east wing corridor and the elevator will run again.
+电梯传动箱缺一枚齿轮。也许地下室能找到。	The elevator gearbox is missing a gear. Perhaps one can be found in the basement.
+电梯传动箱重新咬合，电梯可以使用了。	The elevator gearbox meshes again. The elevator can be used.
+电梯的传动齿轮被拆到地下机械间维修。\n没有它，电梯只会发出空转声。	The elevator gear was taken to the basement machine room for repair.\nWithout it, the elevator only hums uselessly.
+电梯没有通电，按钮毫无反应。	The elevator has no power. The buttons do nothing.
+电梯缺少一枚传动齿轮。	The elevator is missing a drive gear.
+电梯在东翼走廊尽头。	The elevator is at the end of the east wing corridor.
+电梯抵达二层。	The elevator arrives at the second floor.
+电梯返回一层。	The elevator returns to the ground floor.
+齿轮在地下室机械间的工作台上。	The gear is on the workbench in the basement machine room.
+齿轮装好了，电梯恢复运转。	The gear is installed and the elevator works again.
+修复电梯后使用面板前往二层。	After repairing the elevator, use the panel to go to the second floor.
+机械间便签	Machine Room Note
+机械间抽屉	Machine Room Drawer
+机械间里有电梯缺的传动齿轮。\n封印密室在走廊东侧，影之徽记就在那里。	The basement machine room has the elevator's missing gear.\nThe sealed chamber is on the east side of the corridor, and the Shadow Emblem is there.
+拿到齿轮后，到东翼电梯厅面板安装。	Once you have the gear, install it at the east wing elevator hall panel.
+先在电梯厅面板安装齿轮。	First install the gear at the elevator hall panel.
+东翼	East Wing
+西翼	West Wing
+二层	Second Floor
+一层	Ground Floor
+三层	Third Floor
+四层	Fourth Floor
+书房	Study
+书房便签	Study Note
+书房抽屉	Study Drawer
+书房挂钟	Study Clock
+挂钟	Clock
+挂钟的指针停在 4:27。\n\n四位密码应当是 0427。	The clock hands are stopped at 4:27.\n\nThe four-digit code should be 0427.
+挂钟停在 4:27，四位数密码是 0427。	The clock is stopped at 4:27. The four-digit code is 0427.
+输入 0427。	Enter 0427.
+先输入 0427 打开档案室门。	First enter 0427 to open the archive door.
+密码来自书房挂钟。	The code comes from the study clock.
+查看书房挂钟	Check the study clock
+查看书房挂钟，记下四位密码	Check the study clock and note the four-digit code

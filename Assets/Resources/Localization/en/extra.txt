@@ -1,0 +1,74 @@
+# English extra strings and composition fragments.
+初窥门径  笔记 {0}/8	First Glimpse  Notes {0}/8
+庄园学者  笔记 {0}/24	Manor Scholar  Notes {0}/24
+全部笔记  {0}/{1}	All Notes  {0}/{1}
+第一把锁  隐藏密码锁 {0}/1	First Lock  Hidden Keypad {0}/1
+解谜专家  隐藏密码锁 {0}/6	Puzzle Expert  Hidden Keypad {0}/6
+四印归一  封印大门已开启	Four Emblems United  Sealed Gate Opened
+暗道探索者  发现藏书室暗道	Secret Explorer  Found the Library Passage
+独立思考  不使用提示通关	Independent Thinker  Finished without hints
+速通者  30 分钟内通关	Speedrunner  Finished within 30 minutes
+按笔记里记录的颜色顺序操作。	Follow the color order written in the notes.
+房门被电子锁锁住了。门旁有一个密码键盘。	The door is locked by an electronic lock. A keypad is beside it.
+键盘没有反应，屏幕一片漆黑。也许该先找到电源。	The keypad does not respond and its screen is dark. Maybe find the power first.
+阅读	Read 
+躲进	Hide in 
+仆役	Servant
+机关（已完成）	Mechanism (Complete)
+评级 	Rating 
+逃脱 	Escapes 
+已收集 	Collected 
+光影质量：	Lighting Quality: 
+界面缩放：	UI Scale: 
+视野：	Field of View: 
+帧率：	Frame Rate: 
+检查报告	Examination Report
+可以重新开始，尝试收集全部笔记。	You can restart and try to collect all notes.
+里的	's 
+阅读房间里的便签、日记或纸张后，会自动记录在这里。	Notes, diaries and papers you read are logged here automatically.
+    ·    F9 可截图	    ·    F9 for screenshot
+  ·  被抓 	 ·  Caught 
+  ·  笔记 	 ·  Notes 
+  ·  当前	 ·  Current
+  ·  当前地图	 ·  Current Map
+  ·  地图数据未加载	 ·  Map data not loaded
+  ·  谜题 	 ·  Puzzles 
+  ·  区域 	 ·  Area 
+  ·  已探索 	 ·  Explored 
+  ·  用时 	 ·  Time 
+ dB / 阈值 	dB / Threshold 
+ dB，怪物赶往玩家位置。	dB, monsters are heading to the player.
+ 次	 times
+ 次 · 被抓 	 times · Caught 
+ 次 · 失败 	 times · Failed 
+ 次。	 times.
+ 次\n	 times\n
+ 分	 min
+ 分钟	 min
+ 个 · 拾取 	· picked up 
+ 个 · 收集道具	· items collected
+ 间	 rooms
+ 件 · 躲藏 	· hid 
+ 件。	items.
+ 枚）	emblems)
+ 枚。	emblems.
+ 秒	sec
+ 是空的。	 is empty.
+ 位密码	-digit code
+ 小时 	hours 
+ 种 · 游玩 	· played 
+ 庄园学者  笔记 	Manor Scholar  Notes 
+ 初窥门径  笔记 	First Glimpse  Notes 
+ 第一把锁  隐藏密码锁 	First Lock  Hidden Keypad 
+ 独立思考  不使用提示通关	Independent Thinker  Finished without hints
+ 四印归一  封印大门已开启	Four Emblems United  Sealed Gate Opened
+ 速通者  30 分钟内通关	Speedrunner  Finished within 30 minutes
+ 解谜专家  隐藏密码锁 	Puzzle Expert  Hidden Keypad 
+ 暗道探索者  发现藏书室暗道	Secret Explorer  Found the Library Passage
+\n\n—— 记录位置：	\n\n— Recorded at: 
+\n最近保存 	\nLast saved 
+」，点「开始游戏」进入。	, press "Start Game" to enter.
+」尚未完成。	" is not ready yet.
+提示 {0}	Hint {0}
+体力 {0} / {1}	Stamina {0} / {1}
+麦克风 {0} dB / 阈值 {1} dB	Microphone {0} dB / Threshold {1} dB

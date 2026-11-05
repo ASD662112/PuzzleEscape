@@ -56,6 +56,7 @@ namespace PuzzleEscape.UI
         private Text timerText;
         private Image staminaFill;
         private Text staminaLabel;
+        private Text micLevelText;
         private int lastStaminaShown = -1;
         private Text toastText;
         private CanvasGroup toastGroup;
@@ -84,10 +85,14 @@ namespace PuzzleEscape.UI
         private Text settingsFieldOfViewValue;
         private Text settingsUiScaleValue;
         private Text settingsDifficultyValue;
+        private Text settingsLanguageValue;
         private RectTransform difficultyOverlay;
         private Image[] difficultyOptionBackgrounds;
         private Text[] difficultyOptionNames;
+        private Button difficultyMicButton;
+        private Text difficultyMicValue;
         private int pendingDifficulty;
+        private bool pendingMicNoise;
 
         private static readonly string[] DifficultyDescriptions =
         {
@@ -102,6 +107,13 @@ namespace PuzzleEscape.UI
         private Text settingsResumeText;
         private Image[] qualityButtonImages;
         private Text[] qualityButtonLabels;
+
+        private RectTransform achievementOverlay;
+        private Text achievementSubtitleText;
+        private Text achievementStatsText;
+        private Text[] achievementTitleTexts;
+        private Text[] achievementDescTexts;
+        private bool achievementOpen;
 
         private RectTransform mainMenuOverlay;
         private Button mainMenuContinueButton;
@@ -168,7 +180,7 @@ namespace PuzzleEscape.UI
             boundInventory != null ? boundInventory.ItemAt(selectedSlot) : null;
 
         public bool IsModalOpen => mainMenuOpen || clueOpen || backpackOpen || winOpen || loseOpen || settingsOpen ||
-                                   customizingControls ||
+                                   customizingControls || achievementOpen ||
                                    (difficultyOverlay != null && difficultyOverlay.gameObject.activeSelf) ||
                                    (keypadUI != null && keypadUI.IsOpen) ||
                                    (CaseFileUI.Instance != null && CaseFileUI.Instance.IsOpen) ||
@@ -201,6 +213,7 @@ namespace PuzzleEscape.UI
             BuildMainMenu();
             BuildDifficultySelect();
             BuildSettings();
+            BuildAchievementPanel();
             BuildFade();
             BuildLosePanel();
         }
@@ -220,6 +233,11 @@ namespace PuzzleEscape.UI
                 GameManager.Instance.Lost -= HandleLost;
             }
 
+            if (AchievementSystem.Instance != null)
+            {
+                AchievementSystem.Instance.Unlocked -= HandleAchievementUnlocked;
+            }
+
             if (Instance == this)
             {
                 Instance = null;
@@ -237,6 +255,11 @@ namespace PuzzleEscape.UI
                 SetObjective(GameManager.Instance.CurrentObjective);
             }
 
+            if (AchievementSystem.Instance != null)
+            {
+                AchievementSystem.Instance.Unlocked += HandleAchievementUnlocked;
+            }
+
             // 主界面默认显示，由 RefreshModalState 负责解锁鼠标。
             RefreshModalState();
 
@@ -252,6 +275,7 @@ namespace PuzzleEscape.UI
         {
             UpdateTimer();
             UpdateStamina();
+            UpdateMicLevel();
             UpdateCursorHint();
 
             if (CaseFileUI.Instance != null && CaseFileUI.Instance.IsOpen)
@@ -290,6 +314,16 @@ namespace PuzzleEscape.UI
                 if (!IsMobileUI && Input.GetKeyDown(KeyCode.Escape))
                 {
                     CloseDifficultySelect();
+                }
+
+                return;
+            }
+
+            if (achievementOpen)
+            {
+                if (!IsMobileUI && Input.GetKeyDown(KeyCode.Escape))
+                {
+                    CloseAchievements();
                 }
 
                 return;
@@ -427,6 +461,14 @@ namespace PuzzleEscape.UI
             staminaFill.rectTransform.anchorMax = new Vector2(1f, 1f);
             staminaFill.rectTransform.offsetMin = Vector2.zero;
             staminaFill.rectTransform.offsetMax = Vector2.zero;
+
+            // 现实声音检测开启时，在体力条下方显示当前麦克风响度，方便玩家校准。
+            micLevelText = UIFactory.CreateText(canvas.transform, "MicLevelText", string.Empty, 14,
+                Muted, TextAnchor.MiddleLeft);
+            UIFactory.Place(micLevelText.rectTransform, new Vector2(0f, 1f), new Vector2(0f, 1f),
+                new Vector2(44f, -130f), new Vector2(360f, 20f));
+            AddShadow(micLevelText.gameObject, new Vector2(1f, -1f));
+            micLevelText.gameObject.SetActive(false);
 
             toastText = UIFactory.CreateText(canvas.transform, "ToastText", string.Empty, 27, TextColor);
             UIFactory.Place(toastText.rectTransform, new Vector2(0.5f, 1f), new Vector2(0.5f, 1f),
@@ -865,15 +907,20 @@ namespace PuzzleEscape.UI
             UIFactory.Place(mapButton.GetComponent<RectTransform>(), new Vector2(0f, 0.5f),
                 new Vector2(0f, 0.5f), new Vector2(188f, -174f), new Vector2(360f, 64f));
 
+            var achievementsButton = UIFactory.CreateButton(mainMenuOverlay, "MainMenuAchievementsButton", "成就",
+                new Color(0.1f, 0.15f, 0.18f), Accent, OpenAchievements, 24);
+            UIFactory.Place(achievementsButton.GetComponent<RectTransform>(), new Vector2(0f, 0.5f),
+                new Vector2(0f, 0.5f), new Vector2(188f, -244f), new Vector2(360f, 64f));
+
             var settingsButton = UIFactory.CreateButton(mainMenuOverlay, "MainMenuSettingsButton", "设置",
                 new Color(0.1f, 0.15f, 0.18f), Accent, OpenSettings, 24);
             UIFactory.Place(settingsButton.GetComponent<RectTransform>(), new Vector2(0f, 0.5f),
-                new Vector2(0f, 0.5f), new Vector2(188f, -244f), new Vector2(360f, 64f));
+                new Vector2(0f, 0.5f), new Vector2(188f, -314f), new Vector2(360f, 64f));
 
             var quitButton = UIFactory.CreateButton(mainMenuOverlay, "MainMenuQuitButton", "退出游戏",
                 new Color(0.14f, 0.1f, 0.11f), Danger, QuitGame, 24);
             UIFactory.Place(quitButton.GetComponent<RectTransform>(), new Vector2(0f, 0.5f),
-                new Vector2(0f, 0.5f), new Vector2(188f, -314f), new Vector2(360f, 64f));
+                new Vector2(0f, 0.5f), new Vector2(188f, -384f), new Vector2(360f, 64f));
 
             var hint = UIFactory.CreateText(mainMenuOverlay, "MainMenuHint",
                 IsMobileUI
@@ -881,7 +928,7 @@ namespace PuzzleEscape.UI
                     : "W A S D 移动 · F 交互 · E 手电筒 · B 背包 · J 档案 · Esc 设置",
                 17, Muted, TextAnchor.MiddleLeft);
             UIFactory.Place(hint.rectTransform, new Vector2(0f, 0.5f), new Vector2(0f, 0.5f),
-                new Vector2(188f, -388f), new Vector2(920f, 28f));
+                new Vector2(188f, -458f), new Vector2(920f, 28f));
 
             var version = UIFactory.CreateText(mainMenuOverlay, "MainMenuVersion",
                 "室内解谜 · 第一人称", 16, new Color(0.4f, 0.45f, 0.5f, 1f), TextAnchor.LowerRight);
@@ -936,6 +983,7 @@ namespace PuzzleEscape.UI
             }
 
             pendingDifficulty = (int)DifficultySettings.Current;
+            pendingMicNoise = DifficultySettings.MicNoiseEnabled;
             RefreshDifficultyOptions();
             difficultyOverlay.gameObject.SetActive(true);
             RefreshModalState();
@@ -945,6 +993,19 @@ namespace PuzzleEscape.UI
         private void SelectDifficultyOption(int index)
         {
             pendingDifficulty = Mathf.Clamp(index, 0, DifficultySettings.Names.Length - 1);
+            RefreshDifficultyOptions();
+            AudioManager.Instance?.PlayClick();
+        }
+
+        /// <summary>现实声音检测开关：和难度一起在开始前选定。</summary>
+        private void ToggleMicNoise()
+        {
+            if (pendingDifficulty == (int)GameDifficulty.Peace)
+            {
+                return;
+            }
+
+            pendingMicNoise = !pendingMicNoise;
             RefreshDifficultyOptions();
             AudioManager.Instance?.PlayClick();
         }
@@ -972,11 +1033,41 @@ namespace PuzzleEscape.UI
                     difficultyOptionNames[i].color = selected ? Accent : TextColor;
                 }
             }
+
+            bool peace = pendingDifficulty == (int)GameDifficulty.Peace;
+
+            if (difficultyMicButton != null)
+            {
+                difficultyMicButton.interactable = !peace;
+                Image background = difficultyMicButton.GetComponent<Image>();
+
+                if (background != null)
+                {
+                    background.color = !peace && pendingMicNoise
+                        ? new Color(0.16f, 0.32f, 0.27f, 1f)
+                        : new Color(0.1f, 0.14f, 0.17f, 1f);
+                }
+            }
+
+            if (difficultyMicValue != null)
+            {
+                if (peace)
+                {
+                    difficultyMicValue.text = "无怪物";
+                    difficultyMicValue.color = Muted;
+                }
+                else
+                {
+                    difficultyMicValue.text = pendingMicNoise ? "开启" : "关闭";
+                    difficultyMicValue.color = pendingMicNoise ? Accent : TextColor;
+                }
+            }
         }
 
         private void ConfirmDifficultyAndStart()
         {
             DifficultySettings.Set((GameDifficulty)pendingDifficulty);
+            DifficultySettings.SetMicNoise(pendingMicNoise);
 
             if (difficultyOverlay != null)
             {
@@ -1006,7 +1097,7 @@ namespace PuzzleEscape.UI
 
             var card = UIFactory.CreateImage(difficultyOverlay, "DifficultyCard", PanelColor, true);
             UIFactory.Place(card.rectTransform, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f),
-                Vector2.zero, new Vector2(760f, 640f));
+                Vector2.zero, new Vector2(760f, 740f));
 
             var accentBar = UIFactory.CreateImage(card.rectTransform, "DifficultyAccentBar", Accent);
             accentBar.rectTransform.anchorMin = new Vector2(0f, 1f);
@@ -1050,6 +1141,23 @@ namespace PuzzleEscape.UI
                     new Vector2(184f, 0f), new Vector2(470f, 44f));
             }
 
+            // 现实声音检测：和难度一起选定，超过阈值时怪物会赶往玩家位置。
+            var micLabel = UIFactory.CreateText(card.rectTransform, "DifficultyMicLabel", "现实声音检测",
+                22, TextColor, TextAnchor.MiddleLeft);
+            UIFactory.Place(micLabel.rectTransform, new Vector2(0f, 1f), new Vector2(0f, 1f),
+                new Vector2(64f, -542f), new Vector2(170f, 44f));
+
+            var micDesc = UIFactory.CreateText(card.rectTransform, "DifficultyMicDesc",
+                "麦克风超过 40 dB 时怪物会赶来", 15, Muted, TextAnchor.MiddleLeft);
+            UIFactory.Place(micDesc.rectTransform, new Vector2(0f, 1f), new Vector2(0f, 1f),
+                new Vector2(224f, -542f), new Vector2(330f, 44f));
+
+            difficultyMicButton = UIFactory.CreateButton(card.rectTransform, "DifficultyMic", "开启",
+                new Color(0.1f, 0.14f, 0.17f), Accent, ToggleMicNoise, 18);
+            UIFactory.Place(difficultyMicButton.GetComponent<RectTransform>(), new Vector2(0f, 1f),
+                new Vector2(0f, 1f), new Vector2(582f, -544f), new Vector2(100f, 42f));
+            difficultyMicValue = difficultyMicButton.GetComponentInChildren<Text>();
+
             var start = UIFactory.CreateButton(card.rectTransform, "DifficultyStart", "开始游戏", Accent,
                 new Color(0.03f, 0.09f, 0.07f), ConfirmDifficultyAndStart, 24);
             UIFactory.Place(start.GetComponent<RectTransform>(), new Vector2(0.5f, 0f),
@@ -1061,6 +1169,174 @@ namespace PuzzleEscape.UI
                 new Vector2(0.5f, 0f), new Vector2(110f, 34f), new Vector2(200f, 56f));
 
             difficultyOverlay.gameObject.SetActive(false);
+        }
+
+        // ------------------------------------------------------------ 成就与统计
+
+        private void OpenAchievements()
+        {
+            if (achievementOverlay == null)
+            {
+                return;
+            }
+
+            achievementOpen = true;
+            achievementOverlay.gameObject.SetActive(true);
+            RefreshAchievements();
+            RefreshModalState();
+            AudioManager.Instance?.PlayClick();
+        }
+
+        private void CloseAchievements()
+        {
+            if (!achievementOpen)
+            {
+                return;
+            }
+
+            achievementOpen = false;
+
+            if (achievementOverlay != null)
+            {
+                achievementOverlay.gameObject.SetActive(false);
+            }
+
+            RefreshModalState();
+            AudioManager.Instance?.PlayClick();
+        }
+
+        private void BuildAchievementPanel()
+        {
+            var overlay = UIFactory.CreateImage(canvas.transform, "AchievementsOverlay",
+                new Color(0f, 0f, 0f, 0.88f), true);
+            UIFactory.Stretch(overlay.rectTransform);
+            achievementOverlay = overlay.rectTransform;
+
+            var card = UIFactory.CreateImage(achievementOverlay, "AchievementsCard", PanelColor, true);
+            UIFactory.Place(card.rectTransform, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f),
+                Vector2.zero, new Vector2(900f, 820f));
+
+            var accentBar = UIFactory.CreateImage(card.rectTransform, "AchievementsAccentBar", Accent);
+            accentBar.rectTransform.anchorMin = new Vector2(0f, 1f);
+            accentBar.rectTransform.anchorMax = new Vector2(1f, 1f);
+            accentBar.rectTransform.pivot = new Vector2(0.5f, 1f);
+            accentBar.rectTransform.anchoredPosition = Vector2.zero;
+            accentBar.rectTransform.sizeDelta = new Vector2(0f, 4f);
+
+            var title = UIFactory.CreateText(card.rectTransform, "AchievementsTitle", "成就与统计", 42,
+                TextColor, TextAnchor.MiddleLeft);
+            UIFactory.Place(title.rectTransform, new Vector2(0f, 1f), new Vector2(0f, 1f),
+                new Vector2(40f, -26f), new Vector2(480f, 56f));
+
+            achievementSubtitleText = UIFactory.CreateText(card.rectTransform, "AchievementsSubtitle",
+                string.Empty, 16, Muted, TextAnchor.MiddleLeft);
+            UIFactory.Place(achievementSubtitleText.rectTransform, new Vector2(0f, 1f),
+                new Vector2(0f, 1f), new Vector2(42f, -82f), new Vector2(820f, 26f));
+
+            var statsBox = UIFactory.CreateImage(card.rectTransform, "AchievementsStatsBox",
+                new Color(0.025f, 0.035f, 0.045f, 1f), false);
+            UIFactory.Place(statsBox.rectTransform, new Vector2(0f, 1f), new Vector2(0f, 1f),
+                new Vector2(40f, -120f), new Vector2(820f, 96f));
+
+            achievementStatsText = UIFactory.CreateText(statsBox.rectTransform, "AchievementsStats",
+                string.Empty, 15, new Color(0.72f, 0.77f, 0.81f, 1f), TextAnchor.MiddleLeft);
+            UIFactory.Stretch(achievementStatsText.rectTransform);
+            achievementStatsText.rectTransform.offsetMin = new Vector2(18f, 8f);
+            achievementStatsText.rectTransform.offsetMax = new Vector2(-18f, -8f);
+            achievementStatsText.lineSpacing = 1.25f;
+
+            int count = AchievementSystem.Definitions.Length;
+            achievementTitleTexts = new Text[count];
+            achievementDescTexts = new Text[count];
+
+            for (int i = 0; i < count; i++)
+            {
+                int column = i % 2;
+                int row = i / 2;
+                float x = 40f + column * 430f;
+                float y = -238f - row * 62f;
+
+                achievementTitleTexts[i] = UIFactory.CreateText(card.rectTransform,
+                    "AchievementTitle" + i, string.Empty, 18, TextColor, TextAnchor.MiddleLeft);
+                UIFactory.Place(achievementTitleTexts[i].rectTransform, new Vector2(0f, 1f),
+                    new Vector2(0f, 1f), new Vector2(x, y), new Vector2(390f, 26f));
+
+                achievementDescTexts[i] = UIFactory.CreateText(card.rectTransform,
+                    "AchievementDesc" + i, string.Empty, 13, Muted, TextAnchor.MiddleLeft);
+                UIFactory.Place(achievementDescTexts[i].rectTransform, new Vector2(0f, 1f),
+                    new Vector2(0f, 1f), new Vector2(x, y - 26f), new Vector2(390f, 22f));
+            }
+
+            var back = UIFactory.CreateButton(card.rectTransform, "AchievementsBack", "返回",
+                new Color(0.11f, 0.15f, 0.18f), Accent, CloseAchievements, 24);
+            UIFactory.Place(back.GetComponent<RectTransform>(), new Vector2(0.5f, 0f),
+                new Vector2(0.5f, 0f), new Vector2(0f, 34f), new Vector2(220f, 56f));
+
+            achievementOverlay.gameObject.SetActive(false);
+        }
+
+        private void RefreshAchievements()
+        {
+            if (achievementTitleTexts == null)
+            {
+                return;
+            }
+
+            AchievementSystem system = AchievementSystem.Instance;
+            int total = AchievementSystem.Definitions.Length;
+
+            for (int i = 0; i < total; i++)
+            {
+                AchievementDefinition definition = AchievementSystem.Definitions[i];
+                bool unlocked = system != null && system.IsUnlocked(definition.Id);
+
+                achievementTitleTexts[i].text = (unlocked ? "✓  " : "◇  ") + definition.Title;
+                achievementTitleTexts[i].color = unlocked
+                    ? Accent
+                    : new Color(0.62f, 0.67f, 0.72f, 1f);
+
+                achievementDescTexts[i].text = definition.Description;
+                achievementDescTexts[i].color = unlocked
+                    ? new Color(0.78f, 0.83f, 0.86f, 1f)
+                    : new Color(0.46f, 0.5f, 0.55f, 1f);
+            }
+
+            if (achievementSubtitleText != null)
+            {
+                int unlockedCount = system != null ? system.UnlockedCount : 0;
+                achievementSubtitleText.text = "已解锁 " + unlockedCount + " / " + total +
+                                              " · 成就与统计跨存档累计";
+            }
+
+            if (achievementStatsText != null && system != null)
+            {
+                achievementStatsText.text =
+                    "逃脱 " + system.TotalEscapes + " 次 · 失败 " + system.TotalDeaths + " 次 · 被抓 " +
+                    system.TotalCaught + " 次\n" +
+                    "开柜 " + system.TotalContainers + " 个 · 拾取 " + system.TotalPickups + " 件 · 躲藏 " +
+                    system.TotalHides + " 次\n" +
+                    "解谜 " + system.TotalKeypads + " 个 · 收集道具 " + system.CollectedItemCount +
+                    " 种 · 游玩 " + FormatPlayTime(system.TotalPlaySeconds);
+            }
+        }
+
+        private static string FormatPlayTime(float seconds)
+        {
+            int total = Mathf.Max(0, Mathf.FloorToInt(seconds));
+            int hours = total / 3600;
+            int minutes = (total % 3600) / 60;
+
+            if (hours > 0)
+            {
+                return hours + " 小时 " + minutes + " 分";
+            }
+
+            if (minutes > 0)
+            {
+                return minutes + " 分钟";
+            }
+
+            return total + " 秒";
         }
 
         /// <summary>
@@ -1272,6 +1548,17 @@ namespace PuzzleEscape.UI
                       (GameManager.Instance != null ? GameManager.Instance.CaughtCount : 0) + " 次。");
         }
 
+        private void HandleAchievementUnlocked(AchievementDefinition definition)
+        {
+            if (definition == null)
+            {
+                return;
+            }
+
+            GameManager.Instance?.Toast("成就解锁 · " + definition.Title);
+            AudioManager.Instance?.PlayClick();
+        }
+
         private void BuildSettings()
         {
             var overlay = UIFactory.CreateImage(canvas.transform, "SettingsOverlay",
@@ -1281,7 +1568,7 @@ namespace PuzzleEscape.UI
 
             var card = UIFactory.CreateImage(settingsOverlay, "SettingsCard", PanelColor, true);
             UIFactory.Place(card.rectTransform, new Vector2(0.5f, 0.5f), new Vector2(0.5f, 0.5f),
-                Vector2.zero, new Vector2(720f, 880f));
+                Vector2.zero, new Vector2(720f, 960f));
 
             var accentBar = UIFactory.CreateImage(card.rectTransform, "SettingsAccentBar", Accent);
             accentBar.rectTransform.anchorMin = new Vector2(0f, 1f);
@@ -1324,6 +1611,8 @@ namespace PuzzleEscape.UI
             CreateSettingRow(card.rectTransform, "界面缩放", -660f, out settingsUiScaleValue,
                 DecreaseUiScale, IncreaseUiScale);
             CreateSettingInfo(card.rectTransform, "难度", -730f, out settingsDifficultyValue, "本局固定");
+            CreateSettingRow(card.rectTransform, "语言", -800f, out settingsLanguageValue,
+                DecreaseLanguage, IncreaseLanguage);
 
             var save = UIFactory.CreateButton(card.rectTransform, "SettingsSave", "保存游戏",
                 new Color(0.1f, 0.15f, 0.18f), Accent, SaveGame, 18);
@@ -1866,7 +2155,36 @@ namespace PuzzleEscape.UI
                 settingsDifficultyValue.text = DifficultySettings.Names[(int)DifficultySettings.Current];
             }
 
+            if (settingsLanguageValue != null)
+            {
+                settingsLanguageValue.text = Localization.Names[(int)Localization.Current];
+            }
+
             RefreshQualityButtons();
+        }
+
+        private void DecreaseLanguage()
+        {
+            ChangeLanguage(-1);
+        }
+
+        private void IncreaseLanguage()
+        {
+            ChangeLanguage(1);
+        }
+
+        private void ChangeLanguage(int delta)
+        {
+            int count = Localization.Names.Length;
+            int next = ((int)Localization.Current + delta + count) % count;
+            Localization.SetLanguage((GameLanguage)next);
+
+            if (settingsLanguageValue != null)
+            {
+                settingsLanguageValue.text = Localization.Names[next];
+            }
+
+            AudioManager.Instance?.PlayClick();
         }
 
         private void DecreaseVolume()
@@ -2692,9 +3010,55 @@ namespace PuzzleEscape.UI
             if (shown != lastStaminaShown && staminaLabel != null)
             {
                 lastStaminaShown = shown;
-                staminaLabel.text = "体力 " + shown + " / " +
-                                    Mathf.RoundToInt(FirstPersonController.MaxStamina);
+                LocalizedText label = staminaLabel as LocalizedText;
+                if (label != null)
+                {
+                    label.SetFormatted("体力 {0} / {1}", shown,
+                        Mathf.RoundToInt(FirstPersonController.MaxStamina));
+                }
+                else
+                {
+                    staminaLabel.text = "体力 " + shown + " / " +
+                                        Mathf.RoundToInt(FirstPersonController.MaxStamina);
+                }
             }
+        }
+
+        private void UpdateMicLevel()
+        {
+            if (micLevelText == null)
+            {
+                return;
+            }
+
+            MicrophoneNoiseDetector mic = MicrophoneNoiseDetector.Instance;
+            bool show = mic != null && mic.IsListening;
+
+            if (micLevelText.gameObject.activeSelf != show)
+            {
+                micLevelText.gameObject.SetActive(show);
+            }
+
+            if (!show)
+            {
+                return;
+            }
+
+            bool loud = mic.LevelDb >= DifficultySettings.NoiseThresholdDb;
+            LocalizedText micText = micLevelText as LocalizedText;
+            if (micText != null)
+            {
+                micText.SetFormatted("麦克风 {0} dB / 阈值 {1} dB",
+                    Mathf.RoundToInt(mic.LevelDb),
+                    Mathf.RoundToInt(DifficultySettings.NoiseThresholdDb));
+            }
+            else
+            {
+                micLevelText.text = "麦克风 " + Mathf.RoundToInt(mic.LevelDb) + " dB / 阈值 " +
+                                    Mathf.RoundToInt(DifficultySettings.NoiseThresholdDb) + " dB";
+            }
+
+            micLevelText.color = loud ? Danger : Muted;
         }
 
         private void UpdateCursorHint()

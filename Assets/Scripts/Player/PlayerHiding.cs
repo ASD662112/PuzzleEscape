@@ -58,6 +58,7 @@ namespace PuzzleEscape.Player
             }
 
             controller.MovementFrozen = true;
+            AchievementSystem.Instance?.NotifyHiding();
             GameManager.Instance?.Toast("你躲进了" + displayName + "（按 F 出来）");
         }
 

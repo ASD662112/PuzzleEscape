@@ -374,15 +374,15 @@ namespace PuzzleEscape.AI
             Vector3 target = transform.position;
 
             // 玩家已经被送回出生点，怪物留在原地即可；只有贴得太近才挪到 10–18 m 外的空位。
+            // 找不到真正有地板的落点时就保持原地，宁可离玩家近一点，也不要把怪物送到夹层或井里。
             if (FlatDistance(target, playerPosition) < 10f && grid != null && grid.Ready)
             {
-                Vector3 far = grid.RandomWalkablePoint(playerPosition, 10f, 18f);
-
-                if (TryGroundPoint(far, out far) && FlatDistance(far, playerPosition) >= 10f)
+                if (TryFindRespawnSpot(playerPosition, out Vector3 far))
                 {
                     target = far;
                 }
-                else if (TryGroundPoint(homePosition, out Vector3 groundedHome))
+                else if (TryGroundPoint(homePosition, out Vector3 groundedHome) &&
+                         FlatDistance(groundedHome, playerPosition) >= 8f)
                 {
                     target = groundedHome;
                 }
@@ -396,6 +396,47 @@ namespace PuzzleEscape.AI
             lastPosition = transform.position;
 
             Debug.Log("[PuzzleEscape] 怪物已重置到：" + transform.position);
+        }
+
+        /// <summary>
+        /// 在玩家复活点周围找一个真正站得住、并且与怪物本层高度一致的落点。
+        /// 只随机一两次很容易落在楼层间的空隙里，所以多试几次并逐项校验。
+        /// </summary>
+        private bool TryFindRespawnSpot(Vector3 playerPosition, out Vector3 result)
+        {
+            result = playerPosition;
+
+            for (int attempt = 0; attempt < 16; attempt++)
+            {
+                Vector3 candidate = grid.RandomWalkablePoint(playerPosition, 10f, 18f);
+
+                // RandomWalkablePoint 找不到合适格子时会原样返回参考点。
+                if (candidate == playerPosition)
+                {
+                    continue;
+                }
+
+                if (!TryGroundPoint(candidate, out Vector3 grounded))
+                {
+                    continue;
+                }
+
+                if (FlatDistance(grounded, playerPosition) < 10f)
+                {
+                    continue;
+                }
+
+                // 必须和怪物当前楼层同高，避免被放到地下室顶板或别层的地板上。
+                if (Mathf.Abs(grounded.y - homePosition.y) > 1f)
+                {
+                    continue;
+                }
+
+                result = grounded;
+                return true;
+            }
+
+            return false;
         }
 
         private static float FlatDistance(Vector3 a, Vector3 b)
@@ -418,6 +459,13 @@ namespace PuzzleEscape.AI
 
             if (!Physics.Raycast(origin, Vector3.down, out RaycastHit hit, distance,
                     Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore))
+            {
+                return false;
+            }
+
+            // 楼梯井、楼层之间的空隙没有地板，射线会打到下面一层的顶板（例如地下室的顶面）。
+            // 落点比采样面低太多就当作“没有地板”，否则怪物会被放进夹层里再也走不回来。
+            if (hit.point.y < point.y - 0.5f)
             {
                 return false;
             }

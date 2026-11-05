@@ -1,0 +1,133 @@
+# English UI strings. Format: Chinese source<TAB>English translation.
+开始游戏	Start Game
+继续游戏	Continue
+成就	Achievements
+设置	Settings
+选择难度	Select Difficulty
+和平	Peaceful
+简单	Easy
+正常	Normal
+困难	Hard
+恶魔	Demon
+没有怪物，专心探索解谜	No monsters. Focus on exploring and puzzles.
+怪物速度与视野较低，容错空间大	Slower monsters with shorter sight. More forgiving.
+标准体验，怪物会追逐但追不上奔跑	Standard. Monsters chase but cannot outrun you.
+推荐难度，接近原有的怪物手感	Recommended. Close to the original monster balance.
+追逐速度比玩家奔跑快十分之一	Monsters chase 10% faster than your sprint.
+现实声音检测	Real-world sound detection
+麦克风超过 40 dB 时怪物会赶来	Monsters come when the microphone exceeds 40 dB
+开启	On
+关闭	Off
+无怪物	No monsters
+本局开始后无法在游戏中更改。和平难度不会出现怪物。	This cannot be changed during the run. Peaceful difficulty has no monsters.
+返回	Back
+本局固定	Fixed for this run
+难度	Difficulty
+语言	Language
+主音量	Master Volume
+鼠标灵敏度	Mouse Sensitivity
+反转 Y 轴	Invert Y Axis
+显示模式	Display Mode
+全屏	Fullscreen
+窗口	Windowed
+光影质量	Lighting Quality
+低	Low
+中	Medium
+高	High
+帧率	Frame Rate
+视野	Field of View
+界面缩放	UI Scale
+保存游戏	Save Game
+重新开始	Restart
+退出游戏	Quit Game
+自定义控制	Custom Controls
+恢复默认	Reset to Default
+完成	Done
+完成后自动保存，下次进入游戏依然生效	Saved automatically. Applies next time you play.
+拖动摇杆、交互、奔跑和丢弃按钮，放到顺手的位置	Drag the joystick, interact, sprint and drop buttons to comfortable positions.
+Esc 返回游戏	Esc to resume
+Esc 返回主界面	Esc to return to the main menu
+Esc 设置	Esc for settings
+返回主界面	Main Menu
+开始探索	Start Exploring
+选择地图	Select Map
+地图	Map
+切换地图	Change Map
+选择	Select
+已选择	Selected
+未开放	Unavailable
+当前地图	Current Map
+已经是当前地图。	This is already the current map.
+该地图尚未制作，完成后可选。	This map is not ready yet. It will be selectable when finished.
+更多地图将在现有两张地图内容完成后加入。	More maps will be added after the two current maps are complete.
+成就与统计	Achievements & Stats
+成就与统计跨存档累计	Achievements and stats carry across saves
+全部笔记 	All notes 
+还没有记录。阅读房间里的便签、日记或纸张后，会自动记录在这里。	No records yet. Notes, diaries and papers you read will be logged here automatically.
+已读笔记会自动记录在档案里，可以打开档案查看。	Notes you read are logged in the case file automatically.
+案件档案	Case File
+档案	Case File
+档案（J）	Case File (J)
+提示	Hints
+说明	Description
+记录	Records
+物品检查	Item Check
+唯一物品	Unique Item
+可重复杂物	Common Item
+拖动旋转 · 滚轮缩放	Drag to rotate · Scroll to zoom
+（没有找到关于这件东西的记录）	(No record of this item was found)
+输入 4 位密码，按回车确认	Enter the 4-digit code and press Enter
+密码正确	Correct code
+密码错误，请重新输入	Wrong code. Please try again.
+电子密码锁	Electronic Keypad
+密码键盘（已解锁）	Keypad (Unlocked)
+使用密码键盘	Use Keypad
+使用密码锁	Use Lock
+刷卡成功，门开了。	Card accepted. The door opens.
+读卡器的红灯一直亮着。	The card reader's red light stays on.
+门锁着，需要对应的通行卡。	The door is locked and needs the matching access card.
+空槽位	Empty Slot
+空槽位不可读取	An empty slot cannot be loaded
+保存会覆盖该槽位原有进度	Saving will overwrite this slot's progress
+选择要读取的存档槽位	Choose a save slot to load
+选择要保存到的存档槽位	Choose a save slot to save to
+槽位 	Slot 
+还没有存档。	 has no save yet.
+尚未进入游戏，无法保存。	You cannot save before starting the game.
+已保存到槽位 	Saved to slot 
+已读取存档。	Save loaded.
+存档读取失败。	Failed to load the save.
+存档写入失败，请检查磁盘权限。	Failed to write the save. Check disk permissions.
+存档格式无效。	Invalid save format.
+存档无法读取，可删除后重新保存	Save cannot be read. Delete it and save again.
+删除	Delete
+确认删除	Confirm Delete
+已删除槽位 	Deleted slot 
+返回游戏	Resume Game
+保存到此	Save Here
+读取	Load
+查看	View
+打开	Open
+关闭（Esc）	Close (Esc)
+使用	Use
+离开	Leave
+背包	Backpack
+物品栏	Items
+交互	Interact
+奔跑	Sprint
+走路	Walk
+丢弃	Drop
+切换	Toggle
+确认	Confirm
+上一页	Previous
+下一页	Next
+清除	Clear
+检查	Inspect
+启动	Start
+选择提示等级。提示会逐级给出方向、物件和答案。	Choose a hint level. Hints reveal direction, object and answer step by step.
+当前目标：	Current objective: 
+提示 	 Hint 
+尚未进入游戏，无法保存。	You cannot save before starting the game.
+ · 成就与统计跨存档累计	 · Achievements and stats carry across saves
+ 还没有存档。	 has no save yet.
+ 全部笔记  	 All notes  

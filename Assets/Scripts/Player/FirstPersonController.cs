@@ -236,6 +236,11 @@ namespace PuzzleEscape.Player
 
             sprinting = UpdateStamina(sprinting);
 
+            if (sprinting)
+            {
+                AchievementSystem.Instance?.NotifySprint();
+            }
+
             float speed = sprinting ? SprintSpeed : WalkSpeed;
             Vector3 direction = transform.right * input.x + transform.forward * input.y;
 

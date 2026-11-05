@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using PuzzleEscape.Interaction;
 using PuzzleEscape.Puzzle;
 using UnityEngine;
@@ -7,16 +8,19 @@ namespace PuzzleEscape.Core
 {
     /// <summary>
     /// 在现有房间中放置 6 个可选隐藏密码锁。
-    /// 每个密码锁的线索会追加到对应房间的便签里，解开后给出一份新的隐藏记录。
+    /// 每个密码锁的四位密码每局随机生成，线索会追加到对应房间的便签里，
+    /// 解开后给出一份新的隐藏记录。
     /// </summary>
     public class ExpansionPuzzles : MonoBehaviour
     {
         private class PuzzleSpec
         {
             public string ClueId;
-            public string Solution;
             public string PuzzleId;
-            public string ClueText;
+
+            /// <summary>线索文本模板，{code} 会被替换成当局生成的密码。</summary>
+            public string ClueTemplate;
+
             public string FooterHint;
             public string RewardId;
             public string RewardTitle;
@@ -29,10 +33,9 @@ namespace PuzzleEscape.Core
             new PuzzleSpec
             {
                 ClueId = "library",
-                Solution = "1382",
                 PuzzleId = "secret_library",
-                ClueText = "我又数了一遍书架：第 1 排、第 3 格、第 8 层、第 2 本。桌边的旧密码锁也许要这串数字。",
-                FooterHint = "线索提示：查看藏书室便签中的书架编号。",
+                ClueTemplate = "便签背面用铅笔写着一串数字：{code}。\n桌边的旧密码锁也许认这串数字。",
+                FooterHint = "线索提示：藏书室便签的背面写着四位数字。",
                 RewardId = "secret_library_card",
                 RewardTitle = "夹在百科全书里的借阅卡",
                 RewardBody = "借阅卡上只有一个名字：E. Vane。\n日期是 1921 年 10 月 13 日，和酒窖里最旧的那瓶酒同年。\n背面写着一句话：\"地下室不是储藏间，是入口。\"",
@@ -41,10 +44,9 @@ namespace PuzzleEscape.Core
             new PuzzleSpec
             {
                 ClueId = "wine",
-                Solution = "1921",
                 PuzzleId = "secret_wine",
-                ClueText = "最旧的一瓶酒标着 1921。父亲说过，那是庄园建成的年份。\n酒架旁的旧锁也许认这个数字。",
-                FooterHint = "线索提示：查看酒窖便签里最旧一瓶酒的年份。",
+                ClueTemplate = "酒窖账本的封皮内侧，有人用铅笔留下四个数字：{code}。\n酒架旁的旧锁也许认这个数字。",
+                FooterHint = "线索提示：酒窖账本封皮内侧写着四位数字。",
                 RewardId = "secret_wine_ledger",
                 RewardTitle = "酒窖账本的一页",
                 RewardBody = "账本记录了 1921 年到 1948 年的每一次封存。\n最后一页被撕掉了，只剩下半句话：\"四枚徽记不能同时离开庄园。\"",
@@ -53,22 +55,20 @@ namespace PuzzleEscape.Core
             new PuzzleSpec
             {
                 ClueId = "billiard",
-                Solution = "3729",
                 PuzzleId = "secret_billiard",
-                ClueText = "台球桌上的三颗球停在 3、7、2、9 号位，像有人故意留下的顺序。\n球桌边的密码锁或许在等这组编号。",
-                FooterHint = "线索提示：查看台球室便签里的球号。",
+                ClueTemplate = "台球记分牌停在 {code}，像有人故意留下的顺序。\n球桌边的密码锁或许在等这组编号。",
+                FooterHint = "线索提示：台球室记分牌停在四位数字上。",
                 RewardId = "secret_billiard_bet",
                 RewardTitle = "台球室的赌局记录",
-                RewardBody = "记录上写着：\"如果我没回来，就把 3729 交给下一个进来的人。\"\n落款是一个被涂掉的名字。",
+                RewardBody = "记录上写着：\"如果我没回来，就把那串数字交给下一个进来的人。\"\n落款是一个被涂掉的名字。",
                 Offset = new Vector3(1.0f, 0f, 0f)
             },
             new PuzzleSpec
             {
                 ClueId = "greenhouse",
-                Solution = "2413",
                 PuzzleId = "secret_greenhouse",
-                ClueText = "花盆的标签写着：红=2，蓝=4，黄=1，白=3。\n今天开花的顺序是红、蓝、黄、白。",
-                FooterHint = "线索提示：查看温室便签里的花色编号。",
+                ClueTemplate = "花盆标签被水泡花了，只剩这四位还看得清：{code}。\n温室里的旧锁一直空着。",
+                FooterHint = "线索提示：温室花盆标签上残留四位数字。",
                 RewardId = "secret_greenhouse_log",
                 RewardTitle = "温室培育日志",
                 RewardBody = "日志里夹着一片干枯的黑色花瓣。\n页脚写着：\"这些花不是装饰，它们会记住谁来过。\"",
@@ -77,10 +77,9 @@ namespace PuzzleEscape.Core
             new PuzzleSpec
             {
                 ClueId = "laundry",
-                Solution = "3469",
                 PuzzleId = "secret_laundry",
-                ClueText = "我把洗衣符号抄了下来：30°、40°、60°、90°。\n只取每个温度的第一位，就是密码锁要的四位数。",
-                FooterHint = "线索提示：查看洗衣房便签里的四个温度。",
+                ClueTemplate = "洗衣清单最下面多了一行手写数字：{code}。\n墨迹很新，不像这里的旧东西。",
+                FooterHint = "线索提示：洗衣清单底部有一行手写数字。",
                 RewardId = "secret_laundry_list",
                 RewardTitle = "仆役洗衣清单",
                 RewardBody = "清单上有一行不属于这里的衣物：\n\"小主人的白衬衫，领口有锈色，洗不掉。\"\n日期正好是封印大门关闭的那一天。",
@@ -89,16 +88,17 @@ namespace PuzzleEscape.Core
             new PuzzleSpec
             {
                 ClueId = "observatory",
-                Solution = "5274",
                 PuzzleId = "secret_observatory",
-                ClueText = "星图上的坐标是：赤经 5、赤纬 2、方位 7、高度 4。\n望远镜旁的旧锁似乎就是为这组数字准备的。",
-                FooterHint = "线索提示：查看观测室笔记里的星图坐标。",
+                ClueTemplate = "星图角落被人圈出四个数字：{code}。\n望远镜旁的旧锁似乎就是为它准备的。",
+                FooterHint = "线索提示：观测室星图角落圈着四位数字。",
                 RewardId = "secret_observatory_chart",
                 RewardTitle = "被折起的星图",
                 RewardBody = "星图上圈出的不是任何已知星座，而是一座倒映在地下的庄园。\n角落里写着：\"门不是出口，是镜子。\"",
                 Offset = new Vector3(-1.0f, 0f, 0f)
             }
         };
+
+        private const string SeedKeyPrefix = "PuzzleEscape.PuzzleSeed.";
 
         private void Start()
         {
@@ -112,6 +112,8 @@ namespace PuzzleEscape.Core
             Material metal = CreateMaterial(standard, new Color(0.16f, 0.18f, 0.2f));
             Material screen = CreateMaterial(standard, new Color(0.12f, 0.42f, 0.36f));
 
+            int seed = ResolveSeed();
+            var usedCodes = new HashSet<string>();
             int created = 0;
 
             foreach (PuzzleSpec spec in Specs)
@@ -122,18 +124,69 @@ namespace PuzzleEscape.Core
                     continue;
                 }
 
-                if (!string.IsNullOrEmpty(spec.ClueText) &&
+                string code = BuildCode(seed, spec.PuzzleId, usedCodes);
+                string clueText = spec.ClueTemplate.Replace("{code}", code);
+
+                if (!string.IsNullOrEmpty(clueText) &&
                     !string.IsNullOrEmpty(clue.Body) &&
-                    !clue.Body.Contains(spec.ClueText))
+                    !clue.Body.Contains(clueText))
                 {
-                    clue.Body = clue.Body + "\n\n" + spec.ClueText;
+                    clue.Body = clue.Body + "\n\n" + clueText;
                 }
 
-                CreateLock(clue.transform.position, spec, metal, screen);
+                CreateLock(clue.transform.position, spec, code, metal, screen);
                 created++;
+                Debug.Log("[PuzzleEscape] 隐藏密码锁 " + spec.PuzzleId + " 本局密码：" + code);
             }
 
             Debug.Log("[PuzzleEscape] 隐藏密码锁生成：" + created + " 个。");
+        }
+
+        /// <summary>
+        /// 本局密码种子：读档时沿用存档槽已记录的种子，新开局重新生成，
+        /// 让每局密码不同，但存读档前后保持一致。
+        /// </summary>
+        private static int ResolveSeed()
+        {
+            string key = SeedKeyPrefix + SaveGameService.ActiveSlot;
+
+            if (SaveGameService.HasPendingLoad && PlayerPrefs.HasKey(key))
+            {
+                return PlayerPrefs.GetInt(key);
+            }
+
+            int seed = Random.Range(1, int.MaxValue);
+            PlayerPrefs.SetInt(key, seed);
+            PlayerPrefs.Save();
+            return seed;
+        }
+
+        /// <summary>由种子和密码锁 Id 生成稳定的四位密码，并保证同一局内不重复。</summary>
+        private static string BuildCode(int seed, string puzzleId, HashSet<string> used)
+        {
+            for (int salt = 0; salt < 64; salt++)
+            {
+                unchecked
+                {
+                    int hash = seed + salt * 7919;
+
+                    for (int i = 0; i < puzzleId.Length; i++)
+                    {
+                        hash = hash * 31 + puzzleId[i];
+                    }
+
+                    int value = 1000 + ((hash & 0x7fffffff) % 9000);
+                    string code = value.ToString("D4");
+
+                    if (!used.Contains(code))
+                    {
+                        used.Add(code);
+                        return code;
+                    }
+                }
+            }
+
+            return "0427";
         }
 
         private static ClueInteractable FindClue(ClueInteractable[] clues, string clueId)
@@ -149,7 +202,8 @@ namespace PuzzleEscape.Core
             return null;
         }
 
-        private static void CreateLock(Vector3 notePosition, PuzzleSpec spec, Material metal, Material screen)
+        private static void CreateLock(Vector3 notePosition, PuzzleSpec spec, string solution,
+            Material metal, Material screen)
         {
             Vector3 position = notePosition + spec.Offset;
             RaycastHit hit;
@@ -178,7 +232,7 @@ namespace PuzzleEscape.Core
                 new Vector3(0.1f, 0.1f, 0.1f), screen);
 
             var puzzle = root.AddComponent<KeypadPuzzle>();
-            puzzle.Solution = spec.Solution;
+            puzzle.Solution = solution;
             puzzle.RequiresPower = false;
             puzzle.PuzzleId = spec.PuzzleId;
             puzzle.FooterHint = spec.FooterHint;

@@ -444,7 +444,8 @@ namespace PuzzleEscape.UI
             if (selectedEntry < entries.Count)
             {
                 CaseFileSystem.Entry entry = entries[selectedEntry];
-                journalBody.text = "<color=#7FE3C4>" + entry.Title + "</color>\n\n" + entry.Body;
+                journalBody.text = "<color=#7FE3C4>" + Localization.T(entry.Title) + "</color>\n\n" +
+                                   Localization.T(entry.Body);
             }
         }
 
@@ -458,7 +459,8 @@ namespace PuzzleEscape.UI
 
             selectedEntry = entryIndex;
             CaseFileSystem.Entry entry = CaseFileSystem.Entries[entryIndex];
-            journalBody.text = "<color=#7FE3C4>" + entry.Title + "</color>\n\n" + entry.Body;
+            journalBody.text = "<color=#7FE3C4>" + Localization.T(entry.Title) + "</color>\n\n" +
+                               Localization.T(entry.Body);
             AudioManager.Instance?.PlayClick();
         }
 
@@ -482,7 +484,7 @@ namespace PuzzleEscape.UI
         private void RefreshHints()
         {
             string objective = GameManager.Instance != null ? GameManager.Instance.CurrentObjective : "未知目标";
-            hintObjectiveText.text = "当前目标：" + objective;
+            hintObjectiveText.text = Localization.T("当前目标：") + Localization.T(objective);
 
             if (selectedHint <= 0)
             {
@@ -496,7 +498,8 @@ namespace PuzzleEscape.UI
             string[] hints = CaseFileSystem.GetHints(objective);
             int index = Mathf.Clamp(level - 1, 0, hints.Length - 1);
             selectedHint = level;
-            hintBody.text = "<color=#7FE3C4>提示 " + level + "</color>\n\n" + hints[index];
+            hintBody.text = "<color=#7FE3C4>" + Localization.Format("提示 {0}", level) +
+                            "</color>\n\n" + Localization.T(hints[index]);
             CaseFileSystem.MarkHintUsed();
             AudioManager.Instance?.PlayClick();
         }

@@ -56,7 +56,9 @@ namespace PuzzleEscape.AI
                     Vector3 bottom = center + bottomOffset;
                     Vector3 top = center + topOffset;
 
-                    if (IsFree(bottom, top, out _))
+                    // 只有空气还不够：楼层之间的空隙上方也没有碰撞体，
+                    // 但脚下没有地板，怪物走进去会掉到地下室的顶板上卡死。
+                    if (IsFree(bottom, top, out _) && HasFloor(center))
                     {
                         walkable[x + z * width] = true;
                         WalkableCount++;
@@ -114,6 +116,21 @@ namespace PuzzleEscape.AI
             }
 
             return true;
+        }
+
+        /// <summary>
+        /// 格子脚下必须有一层贴着采样面的地板。往下打短射线，
+        /// 命中点低于采样面 0.5 m 就说明下面是楼层空隙或地下室顶板，不算可走。
+        /// </summary>
+        private static bool HasFloor(Vector3 center)
+        {
+            if (!Physics.Raycast(center + Vector3.up * 0.5f, Vector3.down, out RaycastHit hit,
+                    1.2f, Physics.DefaultRaycastLayers, QueryTriggerInteraction.Ignore))
+            {
+                return false;
+            }
+
+            return hit.point.y >= center.y - 0.5f;
         }
 
         private Vector3 CellCenter(int x, int z)

@@ -136,6 +136,7 @@ namespace PuzzleEscape.Puzzle
                     GameManager.Instance?.Toast("密码正确，找到了一份隐藏记录。");
                 }
 
+                AchievementSystem.Instance?.NotifyKeypadSolved();
                 Solved?.Invoke();
                 return true;
             }

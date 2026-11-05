@@ -327,16 +327,21 @@ namespace PuzzleEscape.Core
             bool gate = game != null && game.FinalGateUnlocked;
 
             return
-                Mark(ReadNotes >= 8) + " 初窥门径  笔记 " + ReadNotes + "/8\n" +
-                Mark(ReadNotes >= 24) + " 庄园学者  笔记 " + ReadNotes + "/24\n" +
-                Mark(ReadNotes >= TotalNotes && TotalNotes > 0) +
-                " 全部笔记  " + ReadNotes + "/" + TotalNotes + "\n" +
-                Mark(SolvedPuzzleCount >= 1) + " 第一把锁  隐藏密码锁 " + SolvedPuzzleCount + "/1\n" +
-                Mark(SolvedPuzzleCount >= 6) + " 解谜专家  隐藏密码锁 " + SolvedPuzzleCount + "/6\n" +
-                Mark(gate || won) + " 四印归一  封印大门已开启\n" +
-                Mark(HasSecret("secret_passage")) + " 暗道探索者  发现藏书室暗道\n" +
-                Mark(won && !HintsUsed) + " 独立思考  不使用提示通关\n" +
-                Mark(won && elapsed <= 1800f) + " 速通者  30 分钟内通关\n";
+                Mark(ReadNotes >= 8) + " " +
+                Localization.Format("初窥门径  笔记 {0}/8", ReadNotes) + "\n" +
+                Mark(ReadNotes >= 24) + " " +
+                Localization.Format("庄园学者  笔记 {0}/24", ReadNotes) + "\n" +
+                Mark(ReadNotes >= TotalNotes && TotalNotes > 0) + " " +
+                Localization.Format("全部笔记  {0}/{1}", ReadNotes, TotalNotes) + "\n" +
+                Mark(SolvedPuzzleCount >= 1) + " " +
+                Localization.Format("第一把锁  隐藏密码锁 {0}/1", SolvedPuzzleCount) + "\n" +
+                Mark(SolvedPuzzleCount >= 6) + " " +
+                Localization.Format("解谜专家  隐藏密码锁 {0}/6", SolvedPuzzleCount) + "\n" +
+                Mark(gate || won) + " " + Localization.T("四印归一  封印大门已开启") + "\n" +
+                Mark(HasSecret("secret_passage")) + " " +
+                Localization.T("暗道探索者  发现藏书室暗道") + "\n" +
+                Mark(won && !HintsUsed) + " " + Localization.T("独立思考  不使用提示通关") + "\n" +
+                Mark(won && elapsed <= 1800f) + " " + Localization.T("速通者  30 分钟内通关") + "\n";
         }
 
         private static string Mark(bool completed)

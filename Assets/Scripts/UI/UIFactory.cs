@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using PuzzleEscape.Core;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -9,32 +11,73 @@ namespace PuzzleEscape.UI
     /// </summary>
     public static class UIFactory
     {
-        private static Font cachedFont;
+        private static readonly Dictionary<GameLanguage, Font> FontCache =
+            new Dictionary<GameLanguage, Font>();
 
         public static Font Font
         {
             get
             {
-                if (cachedFont != null)
+                GameLanguage language = Localization.Current;
+                if (FontCache.TryGetValue(language, out Font cached) && cached != null)
                 {
-                    return cachedFont;
+                    return cached;
                 }
 
-                cachedFont = Font.CreateDynamicFontFromOSFont(
-                    new[] { "Microsoft YaHei", "PingFang SC", "SimHei", "Arial" }, 20);
-
-                if (cachedFont == null)
-                {
-                    cachedFont = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
-                }
-
-                if (cachedFont == null)
-                {
-                    cachedFont = Resources.GetBuiltinResource<Font>("Arial.ttf");
-                }
-
-                return cachedFont;
+                Font font = CreateFont(language);
+                FontCache[language] = font;
+                return font;
             }
+        }
+
+        private static Font CreateFont(GameLanguage language)
+        {
+            string[] families;
+
+            switch (language)
+            {
+                case GameLanguage.Japanese:
+                    families = new[]
+                    {
+                        "Yu Gothic UI", "Yu Gothic", "Meiryo", "MS Gothic",
+                        "Microsoft YaHei", "Arial Unicode MS", "Arial"
+                    };
+                    break;
+                case GameLanguage.Korean:
+                    families = new[]
+                    {
+                        "Malgun Gothic", "Gulim", "Batang",
+                        "Microsoft YaHei", "Arial Unicode MS", "Arial"
+                    };
+                    break;
+                case GameLanguage.ChineseTraditional:
+                    families = new[]
+                    {
+                        "Microsoft JhengHei", "Microsoft YaHei", "PingFang TC",
+                        "Arial Unicode MS", "Arial"
+                    };
+                    break;
+                default:
+                    families = new[]
+                    {
+                        "Microsoft YaHei", "PingFang SC", "SimHei",
+                        "Arial Unicode MS", "Arial"
+                    };
+                    break;
+            }
+
+            Font font = UnityEngine.Font.CreateDynamicFontFromOSFont(families, 20);
+            if (font == null)
+            {
+                font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+            }
+
+            if (font == null)
+            {
+                font = Resources.GetBuiltinResource<Font>("Arial.ttf");
+            }
+
+            return font;
         }
 
         public static RectTransform CreateRect(Transform parent, string name)
@@ -76,7 +119,10 @@ namespace PuzzleEscape.UI
             TextAnchor alignment = TextAnchor.MiddleCenter)
         {
             var rect = CreateRect(parent, name);
-            var text = rect.gameObject.AddComponent<Text>();
+
+            // 用 LocalizedText 代替原生 Text：给 text 赋值时自动按当前语言翻译，
+            // 切换语言时也能统一刷新已经创建好的界面。
+            var text = rect.gameObject.AddComponent<LocalizedText>();
             text.font = Font;
             text.text = content;
             text.fontSize = fontSize;

@@ -75,6 +75,7 @@ namespace PuzzleEscape.Interaction
             }
 
             opened = true;
+            AchievementSystem.Instance?.NotifyContainerOpened();
 
             // 柜体根碰撞体会把射线挡在柜内的掉落物前面；打开后关闭它，
             // 让玩家可以直接拾取柜内的钥匙/收藏品（与上锁抽屉的处理一致）。

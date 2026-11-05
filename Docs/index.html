@@ -28,6 +28,20 @@
     -webkit-font-smoothing: antialiased;
   }
 
+  html[lang="ja"] body {
+    font-family: "Yu Gothic UI", "Yu Gothic", "Meiryo", "Hiragino Kaku Gothic ProN",
+      "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  }
+
+  html[lang="ko"] body {
+    font-family: "Malgun Gothic", "Apple SD Gothic Neo", "Gulim",
+      "Microsoft YaHei", system-ui, sans-serif;
+  }
+
+  html[lang="zh-TW"] body {
+    font-family: "Inter", "PingFang TC", "Microsoft JhengHei", "Microsoft YaHei", system-ui, sans-serif;
+  }
+
   body {
     min-height: 100vh;
     overflow-x: hidden;
@@ -73,6 +87,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 30px 0 0;
+    gap: 16px;
   }
 
   .brand {
@@ -104,6 +119,41 @@
   }
 
   .nav-right a:hover { color: var(--text); }
+
+  /* 语言切换 */
+  .lang-select {
+    appearance: none;
+    -webkit-appearance: none;
+    padding: 6px 30px 6px 13px;
+    border: 1px solid var(--line-strong);
+    border-radius: 999px;
+    background-color: rgba(255, 255, 255, 0.03);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath fill='%238b939c' d='M6 8 0 0h12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 9px;
+    color: var(--text);
+    font-family: inherit;
+    font-size: 12.5px;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: border-color 0.25s ease, background-color 0.25s ease;
+  }
+
+  .lang-select:hover {
+    border-color: var(--accent);
+    background-color: var(--accent-dim);
+  }
+
+  .lang-select:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  .lang-select option {
+    background: #0c0e11;
+    color: var(--text);
+  }
 
   /* Hero */
   .hero { padding: 96px 0 88px; }
@@ -160,7 +210,9 @@
     transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
   }
 
-  .btn svg { width: 18px; height: 18px; fill: currentColor; opacity: 0.9; }
+  .btn svg { width: 18px; height: 18px; fill: currentColor; opacity: 0.9; flex: none; }
+
+  .btn .label { font-size: 15px; color: inherit; letter-spacing: 0; }
 
   .btn span {
     font-size: 12px;
@@ -182,6 +234,8 @@
   }
 
   .btn.primary span { color: rgba(4, 19, 14, 0.62); }
+
+  .btn.primary .label { color: #04130e; }
 
   .btn.primary:hover {
     background: #a2f2d4;
@@ -317,7 +371,7 @@
 
   footer a:hover { color: var(--accent); }
 
-  .foot-links { display: flex; gap: 20px; }
+  .foot-links { display: flex; gap: 20px; flex-wrap: wrap; }
 
   /* 进场动画 */
   .reveal {
@@ -345,6 +399,8 @@
 
   @media (max-width: 520px) {
     .nav-right .ghost { display: none; }
+    .nav-right { gap: 10px; }
+    .pill { display: none; }
     .actions { flex-direction: column; }
     .btn { justify-content: space-between; }
     .specs { grid-template-columns: 1fr; }
@@ -357,47 +413,54 @@
 
   <div class="page">
     <header class="nav">
-      <a class="brand" href="#top" aria-label="PuzzleEscape 首页">PUZZLE<span>ESCAPE</span></a>
+      <a class="brand" href="#top" aria-label="PuzzleEscape">PUZZLE<span>ESCAPE</span></a>
       <div class="nav-right">
-        <span class="pill">v1.1.0</span>
+        <span class="pill">v1.1.1</span>
+        <select class="lang-select" id="langSelect" aria-label="Language / 语言">
+          <option value="zh-CN">简体中文</option>
+          <option value="en">English</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="zh-TW">繁體中文</option>
+        </select>
         <a class="ghost" href="https://github.com/ASD662112/PuzzleEscape" target="_blank" rel="noreferrer">GitHub ↗</a>
       </div>
     </header>
 
     <main id="top">
       <section class="hero" style="border-top:0">
-        <p class="eyebrow reveal">第一人称 · 室内解谜 · 潜行逃脱</p>
-        <h1 class="reveal">在黑暗里，<br /><em>别让它听见你。</em></h1>
-        <p class="lede reveal">
+        <p class="eyebrow reveal" data-i18n="eyebrow">第一人称 · 室内解谜 · 潜行逃脱</p>
+        <h1 class="reveal" data-i18n-html="heroTitle">在黑暗里，<br /><em>别让它听见你。</em></h1>
+        <p class="lede reveal" data-i18n="lede">
           你在一座封闭的旧宅中醒来。手电筒的光很窄，走廊很长，而黑暗里还有别的东西在走动——
           它会循声赶来，也会追着你穿过楼层。找到线索，打开那扇门，或者先想办法活下来。
         </p>
 
         <div class="actions reveal">
-          <a class="btn primary" href="https://github.com/ASD662112/PuzzleEscape/releases/download/v1.1.0/PuzzleEscape_Setup.exe" download>
+          <a class="btn primary" href="https://github.com/ASD662112/PuzzleEscape/releases/download/v1.1.1/PuzzleEscape_Setup.exe" download>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5 10.5 4.4v7.1H3V5.5Zm8.6-1.2L21 3v8.5h-9.4V4.3ZM3 12.5h7.5v7.1L3 18.5v-6Zm8.6 0H21V21l-9.4-1.3v-7.2Z"/></svg>
-            Windows 下载 <span>265 MB · x64</span>
+            <span class="label" data-i18n="downloadWin">Windows 下载</span> <span>265 MB · x64</span>
           </a>
-          <a class="btn" href="https://github.com/ASD662112/PuzzleEscape/releases/download/v1.1.0/PuzzleEscape.apk" download>
+          <a class="btn" href="https://github.com/ASD662112/PuzzleEscape/releases/download/v1.1.1/PuzzleEscape.apk" download>
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.9 8.4h10.2c.3 0 .5.2.5.5v6.6a1.4 1.4 0 0 1-1.4 1.4v2.6a1 1 0 1 1-2 0v-2.6h-4.4v2.6a1 1 0 1 1-2 0v-2.6A1.4 1.4 0 0 1 6.4 15.5V8.9c0-.3.2-.5.5-.5Zm-2.4.3c.6 0 1 .5 1 1v4.6a1 1 0 1 1-2 0V9.7c0-.6.4-1 1-1Zm16.6 0c.6 0 1 .4 1 1v4.6a1 1 0 1 1-2 0V9.7c0-.6.4-1 1-1ZM9 7.2l-1-1.7a.3.3 0 0 1 .1-.4.3.3 0 0 1 .4.1l1 1.7a6.6 6.6 0 0 1 4.9 0l1-1.7a.3.3 0 0 1 .4-.1c.2.1.2.3.1.4l-1 1.7c1.7.8 2.8 2.2 2.8 3.9H6.2c0-1.7 1.1-3.1 2.8-3.9Zm.3 2.7a.7.7 0 1 0 0-1.4.7.7 0 0 0 0 1.4Zm5.4 0a.7.7 0 1 0 0-1.4.7.7 0 0 0 0 1.4Z"/></svg>
-            Android 下载 <span>140 MB · APK</span>
+            <span class="label" data-i18n="downloadAndroid">Android 下载</span> <span>140 MB · APK</span>
           </a>
         </div>
 
-        <p class="hint reveal">
+        <p class="hint reveal" data-i18n="hint">
           Windows 10 / 11 64 位 · Android 8.0 及以上 · 安装包未签名，若遇 SmartScreen 提示请选择「更多信息 → 仍要运行」
         </p>
       </section>
 
       <section>
         <div class="section-inner">
-          <p class="tag reveal">关于游戏</p>
+          <p class="tag reveal" data-i18n="aboutTag">关于游戏</p>
           <div class="about-grid">
             <div class="tag reveal">PUZZLEESCAPE</div>
             <div class="about-text reveal">
-              <p>《PuzzleEscape》是一款第一人称室内解谜逃脱游戏。你在一座封闭的旧宅中醒来，只能借手电筒的微光在走廊、病房与地下室之间摸索：翻找抽屉和柜子，收集钥匙、保险丝、通行卡与四枚封印徽记，解开一扇扇锁住的门。</p>
-              <p>黑暗中有东西在走动：它会循声赶来，也会追着你穿过楼层。你可以躲进柜子屏住呼吸，也可以放下蜡烛引开它的注意；还可能因为一次奔跑耗尽体力，被它追上。</p>
-              <p>两张地图、五档难度，从没有怪物的纯粹解谜，到比你还快的恶魔。每一步都在赌：先拿线索，还是先保命。</p>
+              <p data-i18n="aboutP1">《PuzzleEscape》是一款第一人称室内解谜逃脱游戏。你在一座封闭的旧宅中醒来，只能借手电筒的微光在走廊、病房与地下室之间摸索：翻找抽屉和柜子，收集钥匙、保险丝、通行卡与四枚封印徽记，解开一扇扇锁住的门。</p>
+              <p data-i18n="aboutP2">黑暗中有东西在走动：它会循声赶来，也会追着你穿过楼层。你可以躲进柜子屏住呼吸，也可以放下蜡烛引开它的注意；还可能因为一次奔跑耗尽体力，被它追上。</p>
+              <p data-i18n="aboutP3">两张地图、五档难度，从没有怪物的纯粹解谜，到比你还快的恶魔。每一步都在赌：先拿线索，还是先保命。</p>
             </div>
           </div>
         </div>
@@ -405,27 +468,27 @@
 
       <section>
         <div class="section-inner">
-          <p class="tag reveal">玩法</p>
+          <p class="tag reveal" data-i18n="gameplayTag">玩法</p>
           <div class="cards">
             <article class="card reveal">
-              <span class="index">01 / 探索</span>
-              <h3>翻遍每一格抽屉</h3>
-              <p>钥匙、保险丝、通行卡、旧日记——线索散落在容器与房间深处，随机刷新让每一次开局都不完全相同。</p>
+              <span class="index" data-i18n="card1Index">01 / 探索</span>
+              <h3 data-i18n="card1Title">翻遍每一格抽屉</h3>
+              <p data-i18n="card1Text">钥匙、保险丝、通行卡、旧日记——线索散落在容器与房间深处，随机刷新让每一次开局都不完全相同。</p>
             </article>
             <article class="card reveal">
-              <span class="index">02 / 潜行</span>
-              <h3>别让它听见你</h3>
-              <p>奔跑、开门、丢下酒瓶都会发出声音。蹲在暗处、关掉手电、躲进柜子，才有机会从它身边溜过去。</p>
+              <span class="index" data-i18n="card2Index">02 / 潜行</span>
+              <h3 data-i18n="card2Title">别让它听见你</h3>
+              <p data-i18n="card2Text">奔跑、开门、丢下酒瓶都会发出声音。蹲在暗处、关掉手电、躲进柜子，才有机会从它身边溜过去。</p>
             </article>
             <article class="card reveal">
-              <span class="index">03 / 光影</span>
-              <h3>一根蜡烛，六十秒</h3>
-              <p>手电筒与半截蜡烛是唯一的依靠。照亮身边五米，也可以把蜡烛放在地上，当作路标或诱饵。</p>
+              <span class="index" data-i18n="card3Index">03 / 光影</span>
+              <h3 data-i18n="card3Title">一根蜡烛，六十秒</h3>
+              <p data-i18n="card3Text">手电筒与半截蜡烛是唯一的依靠。照亮身边五米，也可以把蜡烛放在地上，当作路标或诱饵。</p>
             </article>
             <article class="card reveal">
-              <span class="index">04 / 难度</span>
-              <h3>从和平到恶魔</h3>
-              <p>开局选定本局难度：和平没有怪物；恶魔的追逐速度比你的奔跑还快十分之一，选定后无法更改。</p>
+              <span class="index" data-i18n="card4Index">04 / 难度</span>
+              <h3 data-i18n="card4Title">从和平到恶魔</h3>
+              <p data-i18n="card4Text">开局选定本局难度：和平没有怪物；恶魔的追逐速度比你的奔跑还快十分之一，选定后无法更改。</p>
             </article>
           </div>
         </div>
@@ -433,23 +496,23 @@
 
       <section>
         <div class="section-inner">
-          <p class="tag reveal">下载信息</p>
+          <p class="tag reveal" data-i18n="downloadTag">下载信息</p>
           <dl class="specs reveal">
             <div class="spec">
-              <dt>版本</dt>
-              <dd>v1.1.0</dd>
+              <dt data-i18n="specVersion">版本</dt>
+              <dd>v1.1.1</dd>
             </div>
             <div class="spec">
-              <dt>平台</dt>
-              <dd>Windows · Android</dd>
+              <dt data-i18n="specPlatform">平台</dt>
+              <dd data-i18n="specPlatformValue">Windows · Android</dd>
             </div>
             <div class="spec">
-              <dt>安装包</dt>
+              <dt data-i18n="specPackage">安装包</dt>
               <dd>265 MB / 140 MB</dd>
             </div>
             <div class="spec">
-              <dt>人数</dt>
-              <dd>单人 · 离线</dd>
+              <dt data-i18n="specPlayers">人数</dt>
+              <dd data-i18n="specPlayersValue">单人 · 离线</dd>
             </div>
           </dl>
         </div>
@@ -457,15 +520,264 @@
     </main>
 
     <footer>
-      <span>© <span id="year">2026</span> PuzzleEscape · 室内解谜逃脱</span>
+      <span>© <span id="year">2026</span> <span data-i18n="footerTagline">PuzzleEscape · 室内解谜逃脱</span></span>
       <div class="foot-links">
-        <a href="https://github.com/ASD662112/PuzzleEscape" target="_blank" rel="noreferrer">源码仓库 ↗</a>
-        <a href="https://github.com/ASD662112/PuzzleEscape/releases" target="_blank" rel="noreferrer">全部版本 ↗</a>
+        <a href="https://github.com/ASD662112/PuzzleEscape" target="_blank" rel="noreferrer" data-i18n="footerSource">源码仓库 ↗</a>
+        <a href="https://github.com/ASD662112/PuzzleEscape/releases" target="_blank" rel="noreferrer" data-i18n="footerReleases">全部版本 ↗</a>
       </div>
     </footer>
   </div>
 
   <script>
+    const I18N = {
+      "zh-CN": {
+        metaTitle: "PuzzleEscape · 第一人称室内解谜逃脱",
+        metaDescription: "PuzzleEscape 是一款第一人称室内解谜逃脱游戏：在封闭的旧宅与疗养院中搜集线索、躲避怪物，找到出路。",
+        eyebrow: "第一人称 · 室内解谜 · 潜行逃脱",
+        heroTitle: "在黑暗里，<br /><em>别让它听见你。</em>",
+        lede: "你在一座封闭的旧宅中醒来。手电筒的光很窄，走廊很长，而黑暗里还有别的东西在走动——它会循声赶来，也会追着你穿过楼层。找到线索，打开那扇门，或者先想办法活下来。",
+        downloadWin: "Windows 下载",
+        downloadAndroid: "Android 下载",
+        hint: "Windows 10 / 11 64 位 · Android 8.0 及以上 · 安装包未签名，若遇 SmartScreen 提示请选择「更多信息 → 仍要运行」",
+        aboutTag: "关于游戏",
+        aboutP1: "《PuzzleEscape》是一款第一人称室内解谜逃脱游戏。你在一座封闭的旧宅中醒来，只能借手电筒的微光在走廊、病房与地下室之间摸索：翻找抽屉和柜子，收集钥匙、保险丝、通行卡与四枚封印徽记，解开一扇扇锁住的门。",
+        aboutP2: "黑暗中有东西在走动：它会循声赶来，也会追着你穿过楼层。你可以躲进柜子屏住呼吸，也可以放下蜡烛引开它的注意；还可能因为一次奔跑耗尽体力，被它追上。",
+        aboutP3: "两张地图、五档难度，从没有怪物的纯粹解谜，到比你还快的恶魔。每一步都在赌：先拿线索，还是先保命。",
+        gameplayTag: "玩法",
+        card1Index: "01 / 探索",
+        card1Title: "翻遍每一格抽屉",
+        card1Text: "钥匙、保险丝、通行卡、旧日记——线索散落在容器与房间深处，随机刷新让每一次开局都不完全相同。",
+        card2Index: "02 / 潜行",
+        card2Title: "别让它听见你",
+        card2Text: "奔跑、开门、丢下酒瓶都会发出声音。蹲在暗处、关掉手电、躲进柜子，才有机会从它身边溜过去。",
+        card3Index: "03 / 光影",
+        card3Title: "一根蜡烛，六十秒",
+        card3Text: "手电筒与半截蜡烛是唯一的依靠。照亮身边五米，也可以把蜡烛放在地上，当作路标或诱饵。",
+        card4Index: "04 / 难度",
+        card4Title: "从和平到恶魔",
+        card4Text: "开局选定本局难度：和平没有怪物；恶魔的追逐速度比你的奔跑还快十分之一，选定后无法更改。",
+        downloadTag: "下载信息",
+        specVersion: "版本",
+        specPlatform: "平台",
+        specPlatformValue: "Windows · Android",
+        specPackage: "安装包",
+        specPlayers: "人数",
+        specPlayersValue: "单人 · 离线",
+        footerTagline: "PuzzleEscape · 室内解谜逃脱",
+        footerSource: "源码仓库 ↗",
+        footerReleases: "全部版本 ↗"
+      },
+      "en": {
+        metaTitle: "PuzzleEscape · First-Person Escape Puzzle",
+        metaDescription: "PuzzleEscape is a first-person indoor escape puzzle game: search for clues and avoid monsters in a sealed manor and a sanatorium.",
+        eyebrow: "FIRST PERSON · INDOOR PUZZLE · STEALTH ESCAPE",
+        heroTitle: "In the dark,<br /><em>don't let it hear you.</em>",
+        lede: "You wake in a sealed old house. The flashlight beam is narrow, the corridors are long, and something else is walking in the dark — it comes when it hears you, and it will chase you across floors. Find the clues, open that door, or just stay alive.",
+        downloadWin: "Download for Windows",
+        downloadAndroid: "Download for Android",
+        hint: "Windows 10 / 11 64-bit · Android 8.0+ · The installer is unsigned; if SmartScreen appears, choose 「More info → Run anyway」",
+        aboutTag: "About",
+        aboutP1: "PuzzleEscape is a first-person indoor escape puzzle game. You wake in a sealed old manor with only a flashlight to guide you through corridors, wards and basements: search drawers and cabinets, collect keys, fuses, access cards and four sealed emblems, and unlock one door after another.",
+        aboutP2: "Something walks in the dark: it comes when it hears you, and it will chase you across floors. You can hide in a cabinet and hold your breath, or set down a candle to draw its attention — and you may run out of stamina mid-sprint and be caught.",
+        aboutP3: "Two maps, five difficulty levels, from pure puzzle solving with no monsters to a demon that runs faster than you. Every step is a bet: grab the clue first, or stay alive first.",
+        gameplayTag: "Gameplay",
+        card1Index: "01 / EXPLORE",
+        card1Title: "Search every drawer",
+        card1Text: "Keys, fuses, access cards, old diaries — clues lie scattered in containers and deep inside rooms, and random spawning makes every run a little different.",
+        card2Index: "02 / STEALTH",
+        card2Title: "Don't let it hear you",
+        card2Text: "Sprinting, opening doors and dropping bottles all make noise. Crouch in the dark, turn off the flashlight, hide in a cabinet — that is how you slip past.",
+        card3Index: "03 / LIGHT",
+        card3Title: "One candle, sixty seconds",
+        card3Text: "The flashlight and a half candle are all you have. Light five meters around you, or set the candle on the ground as a marker or a decoy.",
+        card4Index: "04 / DIFFICULTY",
+        card4Title: "From Peaceful to Demon",
+        card4Text: "Choose the difficulty when you start: Peaceful has no monsters; on Demon the chase speed is 10% faster than your sprint. It cannot be changed afterwards.",
+        downloadTag: "Download",
+        specVersion: "Version",
+        specPlatform: "Platform",
+        specPlatformValue: "Windows · Android",
+        specPackage: "Package",
+        specPlayers: "Players",
+        specPlayersValue: "Single player · Offline",
+        footerTagline: "PuzzleEscape · Indoor Escape Puzzle",
+        footerSource: "Source ↗",
+        footerReleases: "All releases ↗"
+      },
+      "ja": {
+        metaTitle: "PuzzleEscape · 一人称・屋内謎解き脱出",
+        metaDescription: "PuzzleEscape は一人称視点の屋内謎解き脱出ゲーム。閉ざされた旧邸宅と療養院で手がかりを集め、怪物を避けて出口を探そう。",
+        eyebrow: "一人称 · 屋内謎解き · ステルス脱出",
+        heroTitle: "暗闇の中で、<br /><em>音を聞かれるな。</em>",
+        lede: "閉ざされた旧邸宅で目を覚ます。懐中電灯の光は細く、廊下は長い。そして暗闇には別の何かが歩いている——音を立てればやって来て、階を越えて追いかけてくる。手がかりを見つけ、あの扉を開くか、まずは生き延びろ。",
+        downloadWin: "Windows 版をダウンロード",
+        downloadAndroid: "Android 版をダウンロード",
+        hint: "Windows 10 / 11 64ビット · Android 8.0 以上 · インストーラーは未署名です。SmartScreen が出た場合は「詳細情報 → 実行」を選んでください",
+        aboutTag: "ゲームについて",
+        aboutP1: "『PuzzleEscape』は一人称視点の屋内謎解き脱出ゲームです。閉ざされた旧邸宅で目を覚ましたあなたは、懐中電灯のわずかな光だけを頼りに、廊下・病棟・地下室を手探りで進みます。引き出しや棚を探し、鍵・ヒューズ・通行カード・四つの封印の紋章を集め、鍵のかかった扉を次々と開けていきます。",
+        aboutP2: "暗闇には何かが歩いています。音を立てればやって来て、階を越えて追いかけてくる。棚に隠れて息を殺すことも、蝋燭を置いて注意を逸らすこともできます。走り続けて体力を切らせば、追いつかれてしまう。",
+        aboutP3: "マップは2種類、難易度は5段階。怪物のいない純粋な謎解きから、あなたより速い悪夢まで。一手ごとに賭けです——手がかりを取るか、命を守るか。",
+        gameplayTag: "遊び方",
+        card1Index: "01 / 探索",
+        card1Title: "すべての引き出しを調べる",
+        card1Text: "鍵、ヒューズ、通行カード、古い日記——手がかりは棚や部屋の奥に散らばっています。ランダム配置なので、毎回のプレイが少しずつ違います。",
+        card2Index: "02 / 潜行",
+        card2Title: "音を聞かれるな",
+        card2Text: "走る、扉を開ける、瓶を落とす——どれも音になります。暗がりでしゃがみ、懐中電灯を消し、棚に隠れてこそ、あの怪物の横を通り抜けられます。",
+        card3Index: "03 / 光",
+        card3Title: "蝋燭一本、六十秒",
+        card3Text: "懐中電灯と半分の蝋燭が唯一の頼り。周囲5メートルを照らすか、蝋燭を床に置いて道しるべや囮にできます。",
+        card4Index: "04 / 難易度",
+        card4Title: "平和から悪夢まで",
+        card4Text: "開始時に難易度を選択します。平和には怪物がいません。悪夢では追跡速度があなたの走りより10%速く、開始後は変更できません。",
+        downloadTag: "ダウンロード情報",
+        specVersion: "バージョン",
+        specPlatform: "対応環境",
+        specPlatformValue: "Windows · Android",
+        specPackage: "パッケージ",
+        specPlayers: "プレイ人数",
+        specPlayersValue: "シングル · オフライン",
+        footerTagline: "PuzzleEscape · 屋内謎解き脱出",
+        footerSource: "ソース ↗",
+        footerReleases: "全バージョン ↗"
+      },
+      "ko": {
+        metaTitle: "PuzzleEscape · 1인칭 실내 탈출 퍼즐",
+        metaDescription: "PuzzleEscape는 1인칭 실내 탈출 퍼즐 게임입니다. 폐쇄된 저택과 요양원에서 단서를 찾고 몬스터를 피해 출구를 찾으세요.",
+        eyebrow: "1인칭 · 실내 퍼즐 · 잠행 탈출",
+        heroTitle: "어둠 속에서,<br /><em>소리를 들키지 마세요.</em>",
+        lede: "폐쇄된 저택에서 깨어납니다. 손전등 불빛은 좁고 복도는 길며, 어둠 속에는 다른 무언가가 걷고 있습니다——소리를 내면 다가오고, 층을 넘어 쫓아옵니다. 단서를 찾아 그 문을 열거나, 우선 살아남으세요.",
+        downloadWin: "Windows 다운로드",
+        downloadAndroid: "Android 다운로드",
+        hint: "Windows 10 / 11 64비트 · Android 8.0 이상 · 설치 파일은 서명되지 않았습니다. SmartScreen이 뜨면 「추가 정보 → 실행」을 선택하세요",
+        aboutTag: "게임 소개",
+        aboutP1: "『PuzzleEscape』는 1인칭 실내 탈출 퍼즐 게임입니다. 폐쇄된 저택에서 깨어난 당신은 손전등의 희미한 빛만으로 복도, 병동, 지하실을 더듬어 나갑니다. 서랍과 장롱을 뒤져 열쇠, 퓨즈, 출입 카드, 네 개의 봉인 문장을 모으고 잠긴 문을 하나씩 열어야 합니다.",
+        aboutP2: "어둠 속에서 무언가 걷고 있습니다. 소리를 내면 다가오고, 층을 넘어 쫓아옵니다. 장롱에 숨어 숨을 죽이거나, 초를 내려놓아 주의를 돌릴 수 있습니다. 달리다 체력이 떨어지면 붙잡히고 맙니다.",
+        aboutP3: "맵 두 개, 다섯 단계 난이도. 몬스터가 없는 순수한 퍼즐부터 당신보다 빠른 악몽까지. 한 걸음마다 선택입니다——단서를 먼저 챙길지, 목숨을 먼저 지킬지.",
+        gameplayTag: "게임플레이",
+        card1Index: "01 / 탐험",
+        card1Title: "모든 서랍을 뒤지세요",
+        card1Text: "열쇠, 퓨즈, 출입 카드, 옛 일기——단서는 장롱과 방 깊숙한 곳에 흩어져 있고, 무작위 배치 덕분에 매번 조금씩 달라집니다.",
+        card2Index: "02 / 잠행",
+        card2Title: "소리를 들키지 마세요",
+        card2Text: "달리기, 문 열기, 병 떨어뜨리기 모두 소리가 납니다. 어둠 속에 웅크리고, 손전등을 끄고, 장롱에 숨어야 그 옆을 지나갈 수 있습니다.",
+        card3Index: "03 / 빛",
+        card3Title: "초 하나, 육십 초",
+        card3Text: "손전등과 반쪽 초가 유일한 의지입니다. 주변 5미터를 밝히거나, 초를 바닥에 내려놓아 길잡이 또는 미끼로 쓰세요.",
+        card4Index: "04 / 난이도",
+        card4Title: "평화에서 악몽까지",
+        card4Text: "시작할 때 난이도를 선택합니다. 평화에는 몬스터가 없고, 악몽에서는 추격 속도가 당신의 달리기보다 10% 빠릅니다. 시작 후에는 변경할 수 없습니다.",
+        downloadTag: "다운로드 정보",
+        specVersion: "버전",
+        specPlatform: "플랫폼",
+        specPlatformValue: "Windows · Android",
+        specPackage: "패키지",
+        specPlayers: "인원",
+        specPlayersValue: "1인 · 오프라인",
+        footerTagline: "PuzzleEscape · 실내 탈출 퍼즐",
+        footerSource: "소스 ↗",
+        footerReleases: "모든 버전 ↗"
+      },
+      "zh-TW": {
+        metaTitle: "PuzzleEscape · 第一人稱室內解謎逃脫",
+        metaDescription: "PuzzleEscape 是一款第一人稱室內解謎逃脫遊戲：在封閉的舊宅與療養院中搜集線索、躲避怪物，找到出路。",
+        eyebrow: "第一人稱 · 室內解謎 · 潛行逃脫",
+        heroTitle: "在黑暗裡，<br /><em>別讓它聽見你。</em>",
+        lede: "你在一座封閉的舊宅中醒來。手電筒的光很窄，走廊很長，而黑暗裡還有別的東西在走動——它會循聲趕來，也會追著你穿過樓層。找到線索，打開那扇門，或者先想辦法活下來。",
+        downloadWin: "Windows 下載",
+        downloadAndroid: "Android 下載",
+        hint: "Windows 10 / 11 64 位 · Android 8.0 及以上 · 安裝包未簽名，若遇 SmartScreen 提示請選擇「更多資訊 → 仍要執行」",
+        aboutTag: "關於遊戲",
+        aboutP1: "《PuzzleEscape》是一款第一人稱室內解謎逃脫遊戲。你在一座封閉的舊宅中醒來，只能借手電筒的微光在走廊、病房與地下室之間摸索：翻找抽屜和櫃子，收集鑰匙、保險絲、通行卡與四枚封印徽記，解開一扇扇鎖住的門。",
+        aboutP2: "黑暗中有東西在走動：它會循聲趕來，也會追著你穿過樓層。你可以躲進櫃子屏住呼吸，也可以放下蠟燭引開牠的注意；還可能因為一次奔跑耗盡體力，被牠追上。",
+        aboutP3: "兩張地圖、五檔難度，從沒有怪物的純粹解謎，到比你還快的惡魔。每一步都在賭：先拿線索，還是先保命。",
+        gameplayTag: "玩法",
+        card1Index: "01 / 探索",
+        card1Title: "翻遍每一格抽屜",
+        card1Text: "鑰匙、保險絲、通行卡、舊日記——線索散落在容器與房間深處，隨機刷新讓每一次開局都不完全相同。",
+        card2Index: "02 / 潛行",
+        card2Title: "別讓它聽見你",
+        card2Text: "奔跑、開門、丟下酒瓶都會發出聲音。蹲在暗處、關掉手電筒、躲進櫃子，才有機會從它身邊溜過去。",
+        card3Index: "03 / 光影",
+        card3Title: "一根蠟燭，六十秒",
+        card3Text: "手電筒與半截蠟燭是唯一的依靠。照亮身邊五米，也可以把蠟燭放在地上，當作路標或誘餌。",
+        card4Index: "04 / 難度",
+        card4Title: "從和平到惡魔",
+        card4Text: "開局選定本局難度：和平沒有怪物；惡魔的追逐速度比你的奔跑還快十分之一，選定後無法更改。",
+        downloadTag: "下載資訊",
+        specVersion: "版本",
+        specPlatform: "平台",
+        specPlatformValue: "Windows · Android",
+        specPackage: "安裝包",
+        specPlayers: "人數",
+        specPlayersValue: "單人 · 離線",
+        footerTagline: "PuzzleEscape · 室內解謎逃脫",
+        footerSource: "原始碼倉庫 ↗",
+        footerReleases: "全部版本 ↗"
+      }
+    };
+
+    const SUPPORTED = ["zh-CN", "en", "ja", "ko", "zh-TW"];
+    const STORAGE_KEY = "puzzleEscape.lang";
+
+    function detectLanguage() {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved && SUPPORTED.indexOf(saved) >= 0) {
+        return saved;
+      }
+
+      const nav = (navigator.language || "zh-CN").toLowerCase();
+      if (nav.indexOf("zh") === 0) {
+        return /tw|hk|mo|hant/.test(nav) ? "zh-TW" : "zh-CN";
+      }
+      if (nav.indexOf("ja") === 0) return "ja";
+      if (nav.indexOf("ko") === 0) return "ko";
+      if (nav.indexOf("en") === 0) return "en";
+      return "zh-CN";
+    }
+
+    function applyLanguage(lang) {
+      const dict = I18N[lang] || I18N["zh-CN"];
+
+      document.documentElement.lang = lang;
+      document.title = dict.metaTitle;
+
+      const meta = document.querySelector('meta[name="description"]');
+      if (meta) {
+        meta.setAttribute("content", dict.metaDescription);
+      }
+
+      document.querySelectorAll("[data-i18n]").forEach((el) => {
+        const value = dict[el.dataset.i18n];
+        if (typeof value === "string") {
+          el.textContent = value;
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+        const value = dict[el.dataset.i18nHtml];
+        if (typeof value === "string") {
+          el.innerHTML = value;
+        }
+      });
+
+      const select = document.getElementById("langSelect");
+      if (select) {
+        select.value = lang;
+      }
+
+      localStorage.setItem(STORAGE_KEY, lang);
+    }
+
+    const langSelect = document.getElementById("langSelect");
+    if (langSelect) {
+      langSelect.addEventListener("change", (event) => {
+        applyLanguage(event.target.value);
+      });
+    }
+
+    applyLanguage(detectLanguage());
+
     document.getElementById("year").textContent = new Date().getFullYear();
 
     const items = document.querySelectorAll(".reveal:not(.in)");

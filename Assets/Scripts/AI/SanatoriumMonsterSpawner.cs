@@ -337,6 +337,12 @@ namespace PuzzleEscape.AI
                 return false;
             }
 
+            // 别把怪物放到下一层的地板上（楼梯井、楼板缝隙会打穿）。
+            if (hit.point.y < point.y - 0.5f)
+            {
+                return false;
+            }
+
             grounded = new Vector3(point.x, hit.point.y, point.z);
             return true;
         }

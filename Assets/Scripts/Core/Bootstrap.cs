@@ -38,6 +38,16 @@ namespace PuzzleEscape.Core
                 gameObject.AddComponent<AudioManager>();
             }
 
+            if (MicrophoneNoiseDetector.Instance == null)
+            {
+                gameObject.AddComponent<MicrophoneNoiseDetector>();
+            }
+
+            if (AchievementSystem.Instance == null)
+            {
+                gameObject.AddComponent<AchievementSystem>();
+            }
+
             if (LightingQuality.Instance == null)
             {
                 gameObject.AddComponent<LightingQuality>();

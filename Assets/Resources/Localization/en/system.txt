@@ -1,0 +1,135 @@
+# English achievements, tutorial, controls, map and system labels.
+初次逃脱	First Escape
+第一次成功离开封闭的宅邸。	Escaped the sealed manor for the first time.
+全身而退	Walk Away Unharmed
+在一局中没有被怪物抓住并成功逃脱。	Escape a run without being caught by monsters.
+无声潜行	Silent Steps
+一局中从未奔跑，仍然逃了出去。	Escaped without ever sprinting in one run.
+恶魔幸存者	Demon Survivor
+在恶魔难度下成功逃脱。	Escape successfully on Demon difficulty.
+与时间赛跑	Race Against Time
+在 15 分钟内完成一次逃脱。	Escape once within 15 minutes.
+九死一生	Narrow Escape
+在同一局里被抓两次后仍然逃脱。	Escape after being caught twice in the same run.
+两处噩梦	Two Nightmares
+庄园与疗养院都成功逃脱过。	Escaped from both the manor and the sanatorium.
+老练的逃亡者	Veteran Escapee
+累计逃脱 3 次。	Escape 3 times in total.
+收藏家	Collector
+累计收集 35 种不同的道具。	Collect 35 different items in total.
+搜刮成性	Compulsive Looter
+累计打开 50 个柜子或抽屉。	Open 50 cabinets or drawers in total.
+柜中常客	A Familiar Face in the Cabinet
+累计躲进藏身处 10 次。	Hide in hiding spots 10 times in total.
+破译者	Decoder
+累计解开 5 个密码锁。	Solve 5 keypad locks in total.
+第一次失手	First Failure
+被怪物抓住一次。	Be caught by a monster once.
+执迷不悟	Unrepentant
+累计被怪物抓住 10 次。	Be caught by monsters 10 times in total.
+夜行者	Night Walker
+累计游玩 1 小时。	Play for 1 hour in total.
+谜宅逃脱	Puzzle Escape
+夜巡疗养院	Night Watch Sanatorium
+你在一座两层庄园的书房里醒来。\n找到日、月、星、影四枚徽记，打开西侧的封印大门。	You wake in the study of a two-story manor.\nFind the Sun, Moon, Star and Shadow emblems and open the west sealed gate.
+停电后的疗养院只剩应急灯。\n四层病房与一间地下室，每一间都留着没写完的记录。	After the blackout, only emergency lights remain in the sanatorium.\nFour floors of wards and a basement, each room holding unfinished records.
+室内解谜 · 第一人称	Indoor Puzzle · First Person
+1. WASD 移动，鼠标观察，Shift 加速\n2. 靠近物品按 F 交互，拾取 / 阅读 / 打开容器\n3. B 打开背包，J 打开案件档案，E 开关手电筒\n\n阅读便签，打开抽屉，寻找四枚徽记。	1. WASD to move, mouse to look, Shift to sprint\n2. Press F near objects to interact, pick up, read or open containers\n3. B opens the backpack, J opens the case file, E toggles the flashlight\n\nRead notes, open drawers and find the four emblems.
+1. 左侧摇杆移动，右侧拖动转动视角\n2. 点击「奔跑」切换走路 / 奔跑\n3. 靠近物品后点击「交互」\n4. 「背包」查看道具，「档案」查看笔记与提示\n\n阅读便签，打开抽屉，寻找四枚徽记。	1. Left joystick to move, drag the right side to look\n2. Tap Sprint to switch between walking and running\n3. Tap Interact near an object\n4. Backpack shows items; Case File shows notes and hints\n\nRead notes, open drawers and find the four emblems.
+4 × 8 · 32 格 · 点击物品查看详情	4 × 8 · 32 slots · Click an item for details
+B 键打开背包	Press B to open the backpack
+W A S D 移动 · F 交互 · E 手电筒 · B 背包 · J 档案 · Esc 设置	W A S D Move · F Interact · E Flashlight · B Backpack · J Case File · Esc Settings
+滚轮 选择 · Q 丢弃 · E 手电筒 · Esc 设置	Scroll Select · Q Drop · E Flashlight · Esc Settings
+左侧摇杆移动 · 右侧拖动转视角 · 交互按钮拾取道具 · 「奔跑」切换走/跑	Left joystick moves · Drag right to look · Interact picks up items · Sprint toggles walk/run
+点击游戏画面锁定鼠标	Click the game view to lock the mouse
+按住 E 拖动 · 鼠标滚轮旋转	Hold E to drag · Mouse wheel to rotate
+[F] 离开藏身处	[F] Leave hiding spot
+[鼠标右键] 放置蜡烛	[Right Mouse] Place candle
+（按 F 出来）	(Press F to come out)
+（传动箱缺少齿轮）	(Gearbox is missing a gear)
+（返回一层）	(Return to ground floor)
+（没有通电）	(No power)
+（没有找到关于这件东西的记录）	(No record of this item was found)
+（前往二层）	(Go to the second floor)
+（需要：	(Requires: 
+（已打开）	(Opened)
+（已装 	(Installed 
+（阈值 	(Threshold 
+（距离 	(Distance 
+）。配电箱还差 	). The breaker box still needs 
+，还缺 	, still missing 
+，无法接通电源。	, cannot connect power.
+，奔跑按钮 	, Sprint button 
+，丢弃按钮 	, Drop button 
+，交互按钮 	, Interact button 
+，请先运行菜单「PuzzleEscape → 生成怪物 Prefab」。	. Run the menu "PuzzleEscape → Generate Monster Prefab" first.
+），已改为出生点：	), moved to spawn point: 
+，怪物已转到同一层。	, and the monster was moved to the same floor.
+<color=#7FE3C4>目标</color>   	<color=#7FE3C4>Objective</color>   
+<color=#7FE3C4>提示 	<color=#7FE3C4>Hint 
+◆ 当前区域    · 已探索    · 灰色为未探索区域	◆ Current area    · Explored    · Gray means unexplored
+1F_南5_门厅	1F_S5_Lobby
+成就解锁 · 	Achievement Unlocked · 
+获得物品 · 	Item Acquired · 
+截图已保存 · 	Screenshot saved · 
+拾取 	Pick up 
+体力 	Stamina 
+麦克风 	Microphone 
+请输入完整的 	Enter all 
+位密码	-digit code
+秒	sec
+分钟	min
+小时 	hours 
+分	score
+次	times
+次 · 被抓 	times · Caught 
+次 · 失败 	times · Failures 
+次。	times.
+次\n	times\n
+个 · 拾取 	· picked up 
+个 · 收集道具	· items collected
+件 · 躲藏 	· hid 
+件。	items.
+种 · 游玩 	· played 
+枚）	emblems)
+枚。	emblems.
+间	rooms
+位数字	digits
+是空的。	 is empty.
+无	None
+钥匙	Key
+通行卡	Access Card
+储物柜	Locker
+器械柜	Instrument Cabinet
+笔记	Notes
+存档	Save
+解谜 	Puzzle 
+秘密	Secret
+恶魔幸存者	Demon Survivor
+九死一生	Narrow Escape
+红色开关	Red Switch
+蓝色开关	Blue Switch
+绿色开关	Green Switch
+地毯下的暗道	Hidden Passage Under the Rug
+地毯中央有一块松动的木板，下面似乎有冷风。	A loose board lies in the middle of the rug. Cold air seems to rise from below.
+打开大门	Open the Main Gate
+大门已经打开。	The main gate is open.
+档案室的门锁解除了。	The archive door lock is released.
+拿走基座上的日之徽记。	Take the Sun Emblem from the pedestal.
+日之徽记在一层展厅。	The Sun Emblem is in the ground-floor gallery.
+封印大门在二层西端。	The sealed gate is at the west end of the second floor.
+穿过西端的封印大门。	Cross the sealed gate at the west end.
+把储藏室找到的保险丝装入配电间电闸。	Put the fuse found in the storage room into the utility room breaker.
+把四枚徽记依次嵌入大门。	Embed the four emblems into the gate one by one.
+备用出路：地下车库的卷帘门。	Alternate exit: the underground garage shutter.
+备用出路：四层东侧的消防连廊。	Alternate exit: the fourth-floor east fire corridor.
+从车库离开	Leave via the Garage
+从消防连廊离开	Leave via the Fire Corridor
+返回 1F 门厅，用主门钥匙打开正门离开	Return to the 1F lobby and open the main gate with the main gate key
+备用钥匙被我放在了书房书桌的左前方。\n挂钟停下的时刻，就是二层档案室的密码。	I left the spare key at the front-left of the study desk.\nThe time the clock stopped is the second-floor archive code.
+货架上只剩下空箱子。\n抽屉锁着，钥匙在书房。	Only empty boxes remain on the shelf.\nThe drawer is locked; the key is in the study.
+打开洗衣房洗衣柜的最下层，拿到地下室钥匙。	Open the bottom of the laundry cabinet to get the basement key.
+被怪物抓住一次。	Caught by a monster once.
+拿走基座上的日之徽记。	Take the Sun Emblem from the pedestal.
+这扇门需要一把钥匙。	This door needs a key.
+暂时打不开。	Cannot open it yet.

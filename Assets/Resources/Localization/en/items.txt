@@ -1,0 +1,145 @@
+# English item names, descriptions and lore.
+黄铜钥匙	Brass Key
+能打开储藏室抽屉的小钥匙。	A small key that opens the storage room drawer.
+女仆长每晚都用它锁好银器。最后一页值夜记录只写了半句：「抽屉里多了别人的影子。」	The head maid used it every night to lock the silver. The last page of the night log reads only: "There is someone else's shadow in the drawer."
+保险丝	Fuse
+配电间电闸缺失的零件。	A missing part for the breaker switch in the utility room.
+停电那晚，维修工在总闸下捡到一堆烧黑的保险丝，只有这一枚是完好的。	The night the power failed, the repairman found a pile of burnt fuses under the main breaker. Only this one was intact.
+日之徽记	Sun Emblem
+封印大门三枚徽记之一，呈琥珀色。	One of the three emblems for the sealed gate. Amber colored.
+庄园的门要三枚徽记同时归位才能打开。日之徽记一直挂在餐厅壁炉上方，谁也不许碰。	The manor gate opens only when three emblems are placed together. The Sun Emblem hung above the dining room fireplace, and no one was allowed to touch it.
+月之徽记	Moon Emblem
+封印大门三枚徽记之一，呈月蓝色。	One of the three emblems for the sealed gate. Moon-blue.
+旧照片里，庄园主的女儿把它缝在礼服内衬，说这样夜里就不会做噩梦。	In an old photograph, the manor lord's daughter sewed it into her dress lining, saying it kept the nightmares away.
+星之徽记	Star Emblem
+封印大门三枚徽记之一，呈星紫色。	One of the three emblems for the sealed gate. Star-purple.
+第三枚徽记在八音盒的暗格里躺了几十年，直到有人重新拧紧了发条。	The third emblem lay in a music box's hidden compartment for decades, until someone wound the spring again.
+陈年红酒	Aged Red Wine
+餐厅长桌上留下的收藏品，已经落满灰尘。	A collector's bottle left on the dining table, now covered in dust.
+瓶塞上印着 1937。那场告别宴会只开了一半，客人再也没有回来取走剩下的酒。	The cork is stamped 1937. The farewell banquet ended halfway through, and the guests never returned for the remaining wine.
+银茶杯	Silver Teacup
+会客厅茶桌上的银质茶杯，杯沿刻着庄园纹章。	A silver teacup on the parlor table, its rim engraved with the manor crest.
+杯底残留着一圈褐色茶渍，像有人喝到一半忽然被叫走，再没回来。	A ring of brown tea stain remains at the bottom, as if someone was called away mid-drink and never returned.
+八音盒	Music Box
+音乐室钢琴上的八音盒，仍能奏出一段残缺的旋律。	A music box on the music room piano. It can still play a broken melody.
+曲子总在同一个音上停住——庄园主的女儿失踪那天，发条正好卡在这里。	The tune always stops on the same note. On the day the lord's daughter vanished, the spring jammed right there.
+旧照片	Old Photograph
+客房里一张泛黄的合影，记录着庄园昔日的住客。	A yellowed group photo in the guest room, showing the manor's former residents.
+照片背后写着十一个人的名字，可画面里站了十二个人。多出来的那个没有脸。	Eleven names are written on the back, but twelve people stand in the picture. The extra one has no face.
+地下室钥匙	Basement Key
+一把锈迹斑斑的旧钥匙，能打开锅炉房的地窖铁门。	A rusty old key that opens the cellar door in the boiler room.
+锅炉工常年把它挂在脖子上，最后却被人发现锁在地窖门的内侧。	The stoker always wore it around his neck, but it was eventually found locked on the inside of the cellar door.
+手电筒	Flashlight
+按 E 开关的旧式手电筒，是探索黑暗地下室的关键。	An old flashlight toggled with E. Essential for exploring the dark basement.
+守夜人的手电。灯罩上缠着一圈歪斜的胶布，像是有人在黑暗里匆忙缠上去的。	The night watchman's light. Tape is wrapped crookedly around the lens, as if someone did it hastily in the dark.
+电梯齿轮	Elevator Gear
+电梯传动箱缺失的铜制齿轮，沉甸甸的。	The heavy brass gear missing from the elevator gearbox.
+检修工在日志里写：「齿轮换好之前，别让任何人独自乘电梯上四层。」	A repairman wrote in the log: "Until the gear is replaced, never let anyone ride the elevator to the fourth floor alone."
+影之徽记	Shadow Emblem
+封印大门的第四枚徽记，呈暗紫色，藏在庄园地下。	The fourth emblem of the sealed gate, dark purple and hidden beneath the manor.
+三枚徽记封的是门，第四枚封的是门后的东西。传说它被埋在地窖最深处。	Three emblems seal the door; the fourth seals what lies behind it. It is said to be buried at the deepest point of the cellar.
+银烛台	Silver Candlestick
+地下储藏室里翻出的银烛台，烛泪已经凝成琥珀色。	A silver candlestick found in the underground storage room, its wax hardened to amber.
+烛泪里嵌着半枚指纹，比烛台本身更让人不安。	Half a fingerprint is embedded in the wax, more unsettling than the candlestick itself.
+黄铜怀表	Brass Pocket Watch
+表针早已停摆，表壳内侧刻着庄园的旧纹章。	The hands stopped long ago. The old manor crest is engraved inside the case.
+三枚指针都停在 3:17——正是疗养院全楼断电的那一分钟。	All three hands stopped at 3:17, the very minute the sanatorium lost power.
+黑胶唱片	Vinyl Record
+一张边缘破损的黑胶唱片，标签上写着某场旧宴会。	A damaged vinyl record with an old banquet written on its label.
+标签上的宴会日期被人用刀片刮掉了，只剩半行乐队签名。	The banquet date was scraped off with a blade, leaving only half a band signature.
+旧日记	Old Diary
+纸张发脆的日记，记录着庄园仆人在地下走廊里的见闻。	A diary with brittle pages, recording what the manor servants saw in the underground corridors.
+「墙里有人在走。」这句话被反复写了十几遍，字迹一次比一次用力。	"Someone is walking inside the walls." The sentence is written a dozen times, each more forceful than the last.
+青花瓷瓶	Blue-and-White Vase
+缺了一角的青花瓷瓶，仍然看得出昔日的光泽。	A blue-and-white vase with a chipped corner, still showing its former luster.
+缺口很新。瓶身内部的裂纹里，卡着一小片深色的布。	The chip is recent. A small piece of dark cloth is caught in a crack inside the vase.
+黄铜罗盘	Brass Compass
+指针不断晃动，似乎对地下的某些地方格外敏感。	The needle keeps trembling, as if sensitive to something underground.
+无论怎么转，指针最后都会垂向地下走廊的方向，像被什么牵着。	No matter how you turn it, the needle always settles toward the underground corridor, as if pulled by something.
+旧硬币	Old Coin
+面值早已无法辨认的银币，边缘磨得发亮。	A silver coin whose value is no longer legible, its rim worn bright.
+疗养院食堂的代币，背面刻着「凭此换取一份热汤」。	A sanatorium canteen token. The back reads: "Exchange this for one hot soup."
+半截蜡烛	Half Candle
+选中后可照亮身边 5 米，最多燃烧 60 秒；切换走会暂停燃烧。	When selected, lights 5 meters around you for up to 60 seconds. Switching away pauses the burn.
+停电的夜里，病房里的人靠这样的半截蜡烛熬到天亮。有些人没熬过去。	On blackout nights, patients survived until dawn by candles like this. Some did not.
+碎布片	Cloth Scrap
+从旧窗帘上撕下来的布片，沾着灰尘。	A scrap torn from an old curtain, covered in dust.
+边缘是整齐的撕口，更像是有人刻意扯下来当作标记。	The torn edge is unusually neat, as if someone ripped it off deliberately as a marker.
+空酒瓶	Empty Bottle
+瓶底还残留着一点酒渍的旧玻璃瓶。	An old glass bottle with a little wine stain left at the bottom.
+车库守夜人靠它打发长夜，瓶身贴着一张手写便签：「别往西边走。」	The garage night watchman passed the long nights with it. A handwritten note on the bottle reads: "Don't go west."
+旧电池	Old Battery
+外壳有些鼓包的旧电池，早就不通电了。	An old battery with a bulging casing, long dead.
+手电筒的备用电池，被谁一枚枚换下来，堆在抽屉最里侧。	Spare batteries for the flashlight, swapped out one by one and piled at the back of a drawer.
+绷带	Bandage
+卷得整整齐齐的旧绷带，边缘已经发黄。	An old bandage rolled neatly, its edges yellowed.
+绷带上没有血迹，却有一股连消毒水都盖不住的霉味。	There is no blood on the bandage, but a musty smell that even disinfectant cannot hide.
+药瓶	Pill Bottle
+标签被撕掉一半的药瓶，里面只剩几粒白色药片。	A pill bottle with half its label torn off, holding only a few white tablets.
+撕掉的那半张标签上还能认出两个字：「镇静」。	Two characters are still visible on the torn label: "Sedative."
+旧报纸	Old Newspaper
+日期已经模糊的旧报纸，头版是一则失踪启事。	An old newspaper with a blurred date. The front page is a missing-person notice.
+启事里失踪的七个人，照片与庄园那张合影上的面孔一模一样。	The seven people reported missing have the same faces as those in the manor group photo.
+火柴盒	Matchbox
+还剩几根火柴的旧纸盒，盒面印着模糊的旅店标志。	An old paper matchbox with a few matches left, its hotel logo faded.
+盒面的旅店标志和疗养院门厅的徽章如出一辙，像出自同一个人之手。	The hotel logo on the box is identical to the crest in the sanatorium lobby, as if drawn by the same hand.
+肥皂	Soap
+用得只剩薄片的一块肥皂，还带着淡淡的味道。	A soap worn down to a thin slice, still faintly scented.
+洗衣房的肥皂总在半夜少一块。值夜的人从不敢去问是谁拿的。	The laundry soap always loses a piece at midnight. The night staff never dared ask who took it.
+二层通行卡	2F Access Card
+印着「2F 病区」的磁卡，可打开二层病区门。	A card marked "2F Ward" that opens the second-floor ward door.
+背面印着护士的工号，边缘被反复刷卡磨得发白。	A nurse's ID number is printed on the back, and the edge is worn white from repeated swiping.
+三层通行卡	3F Access Card
+印着「3F 手术区」的磁卡，可打开三层手术区门。	A card marked "3F Surgery" that opens the third-floor surgery door.
+卡面下方有一道擦不掉的暗色指印，正好落在照片里手术室门的位置。	A dark fingerprint that cannot be wiped off sits right where the operating room door appears in the photo.
+四层通行卡	4F Access Card
+印着「4F 行政区」的磁卡，可打开四层行政区门。	A card marked "4F Administration" that opens the fourth-floor administration door.
+裂缝从持卡人照片的颈部横穿过去，像有人故意折断过一次。	A crack runs across the cardholder's photo at the neck, as if someone deliberately snapped it once.
+药库钥匙	Pharmacy Key
+药房柜子的钥匙，钥匙柄上缠着褪色的胶布。	The pharmacy cabinet key, its handle wrapped in faded tape.
+胶布上用铅笔写着「只借一次」，字迹被人反复描粗。	"Borrow once only" is penciled on the tape, traced over again and again.
+手术区钥匙	Surgery Key
+手术室器械柜的钥匙，冰冷得不太正常。	The key to the operating room instrument cabinet. It feels unnaturally cold.
+握久了指尖会发麻，比这层楼里任何金属都冷。	Hold it long enough and your fingertips go numb. It is colder than any metal on this floor.
+值班钥匙	Duty Key
+四层值班室的门钥匙，钥匙环上还挂着交接班牌。	The fourth-floor duty room key, with a shift handover tag still on the ring.
+交接班牌上最后一个名字被人用力划掉了，划痕深得几乎穿透铁皮。	The last name on the tag was scratched out hard, deep enough to almost pierce the metal.
+院长室钥匙	Director's Key
+刻着「行政」二字的旧钥匙，齿口磨损严重。	An old key engraved with "Administration", its teeth badly worn.
+齿口磨损得厉害，说明它被开过太多次——远超过一扇办公室的门所需。	The worn teeth show it was used far more often than one office door would require.
+主门钥匙	Main Gate Key
+挂在院长室铁环上的长柄钥匙，能打开一层正门。	A long-handled key on the iron ring in the director's office. It opens the ground-floor main gate.
+逃生最近的钥匙，却被留在离正门最远的一间屋子里。	The key closest to escape was left in the room farthest from the main gate.
+病房钥匙	Ward Key
+一层病区通用的老钥匙，钥匙柄上缠着白色胶布。	An old master key for the ground-floor ward, its handle wrapped in white tape.
+胶布上写着「1F 全线」。胶布底下，还压着另一行更旧的字。	"1F ALL" is written on the tape. Under it is another, older line of writing.
+病人物品柜钥匙	Patient Locker Key
+刻着床位号的小钥匙，能打开四层病房的储物柜。	A small key engraved with a bed number. It opens the fourth-floor patient lockers.
+每把这样的钥匙对应一个床位，而四层的床位登记簿缺了整整一页。	Each key matches one bed, and the fourth-floor bed register is missing an entire page.
+职员钥匙	Staff Key
+地下值班室抽屉里的钥匙，能打开地下档案室。	A key from the underground duty room drawer. It opens the underground archive.
+档案室的钥匙本该有三把，行政记录里却只登记了一把。	There should be three archive keys, but the administration records list only one.
+库房钥匙	Storehouse Key
+洗衣房抽屉里的钥匙，齿口很浅，只能开地下库房。	A key from the laundry drawer. Its teeth are shallow and it only opens the underground storehouse.
+齿口很浅，只能开库房。而库房里堆着的东西，账本上一件都没写。	The shallow teeth only fit the storehouse, and none of the things piled inside appear in the ledger.
+保险丝 · 甲	Fuse A
+总闸缺的第一枚保险丝，铜帽还亮着。	The first fuse missing from the main breaker, its brass cap still bright.
+铜帽还亮着，像是刚被人从别的配电箱里拆下来。	The cap is so bright it looks as if someone just pulled it from another breaker box.
+保险丝 · 乙	Fuse B
+总闸缺的第二枚保险丝，玻璃管里有一道裂纹。	The second fuse missing from the main breaker, with a crack in its glass tube.
+玻璃管里有一道裂纹，却干净得不沾一丝灰——它从没被装上过。	There is a crack in the glass, yet it is spotless. It was never installed.
+保险丝 · 丙	Fuse C
+总闸缺的第三枚保险丝，用油纸包着。	The third fuse missing from the main breaker, wrapped in oil paper.
+油纸包得很仔细，像有人打算把它留到「那一天」再用。	The oil paper is wrapped carefully, as if someone meant to save it for "that day."
+车库钥匙	Garage Key
+挂着木牌的粗钥匙，能打开负一层车库门。	A thick key with a wooden tag. It opens the basement garage door.
+木牌上「负一层·车库」被人添了一笔，改成了「负一层·别进去」。	Someone added a stroke to the tag, changing "B1 Garage" to "B1 Do Not Enter."
+卷帘门曲柄	Shutter Crank
+一根 L 形手摇曲柄，用来摇起车库卷帘门。	An L-shaped hand crank used to raise the garage shutter.
+曲柄上缠着机油和布条，说明最后一次使用非常匆忙。	Oil and cloth strips are wrapped around the crank, showing the last use was very rushed.
+消防连廊钥匙	Fire Corridor Key
+红色钥匙牌上写着「4F 东侧消防连廊」。	A red key tag reads "4F East Fire Corridor."
+钥匙牌背面贴着消防演习的日期——同一天，疗养院被永久关闭。	The back of the tag bears a fire drill date, the same day the sanatorium was permanently closed.
+消防斧	Fire Axe
+斧刃有些卷口，但仍能撬开锈死的盖板。	The blade is nicked but can still pry open a rusted cover.
+斧柄上刻着「最后一次检查：3:17」，和那块怀表停在同一分钟。	The handle is carved with "Last inspection: 3:17", the same minute the pocket watch stopped.
